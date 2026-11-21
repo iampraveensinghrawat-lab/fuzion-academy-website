@@ -237,91 +237,119 @@ const coursesData = {
   }
 };
 
-// Default Gallery Images Database with real photos converted from CR2
+// Default Gallery Images Database (Configured with selected active photos)
 const defaultGalleryData = [
-  {
-    src: 'assets/academy/IMG_2550.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2550.jpg',
-    category: 'classroom',
-    title: 'Interactive Conceptual Mentorship',
-    desc: 'Praveen Sir delivering focused problem-solving sessions at Fuzion Academy.'
-  },
-  {
-    src: 'assets/academy/IMG_2555.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2555.jpg',
-    category: 'speaking',
-    title: 'Public Speaking & Stage Presentations',
-    desc: 'Students actively speaking and presenting on stage to overcome stage fear.'
-  },
-  {
-    src: 'assets/academy/IMG_2559.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2559.jpg',
-    category: 'classroom',
-    title: 'Small Batch Individual Attention',
-    desc: 'Ensuring every student gets doubt resolution and personal guidance.'
-  },
-  {
-    src: 'assets/academy/IMG_2563.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2563.jpg',
-    category: 'facilities',
-    title: 'State-of-the-Art Learning Ambiance',
-    desc: 'Comfortable, air-conditioned smart classrooms designed for deep focus.'
-  },
-  {
-    src: 'assets/academy/IMG_2567.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2567.jpg',
-    category: 'speaking',
-    title: 'Debates & Group Discussion Drills',
-    desc: 'Engaging peer discussions on current topics and communication nuances.'
-  },
-  {
-    src: 'assets/academy/IMG_2571.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2571.jpg',
-    category: 'classroom',
-    title: 'Rigorous Board Exam Preparation',
-    desc: 'Exam-oriented question analysis, speed drills, and mock test evaluations.'
-  },
-  {
-    src: 'assets/academy/IMG_2575.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2575.jpg',
-    category: 'facilities',
-    title: 'Dedicated Study & Practice Space',
-    desc: 'Students utilizing quiet study resources and reference materials.'
-  },
-  {
-    src: 'assets/academy/IMG_2579.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2579.jpg',
-    category: 'speaking',
-    title: 'Confidence Transformation Activities',
-    desc: 'Instilling poise, body language awareness, and vocal clarity.'
-  },
-  {
-    src: 'assets/academy/IMG_2583.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2583.jpg',
-    category: 'classroom',
-    title: 'Science & Math Formula Demystification',
-    desc: 'Breaking down tough physics and calculus derivations into intuitive steps.'
-  },
-  {
-    src: 'assets/academy/IMG_2592.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2592.jpg',
-    category: 'facilities',
-    title: 'Mentor-Student One-on-One Consultations',
-    desc: 'Regular progress tracking and career counseling with parents and students.'
-  },
-  {
-    src: 'assets/academy/IMG_2596.jpg',
-    thumb: 'assets/academy/thumbs/IMG_2596.jpg',
-    category: 'speaking',
-    title: 'Interview & Presentation Rehearsals',
-    desc: 'Mock interview rounds building placement readiness and executive presence.'
-  },
   {
     src: 'assets/academy/IMG_2603.jpg',
     thumb: 'assets/academy/thumbs/IMG_2603.jpg',
     category: 'classroom',
     title: 'Student Milestone Celebrations',
     desc: 'Acknowledging board toppers and communication graduates at Fuzion Academy.'
+  },
+  {
+    src: 'assets/academy/IMG_2608.jpg',
+    thumb: 'assets/academy/thumbs/IMG_2608.jpg',
+    category: 'classroom',
+    title: 'Focused Classroom Problem-Solving',
+    desc: 'Interactive mentoring and student activities at Fuzion Academy Sector-11 Pratap Vihar.'
+  },
+  {
+    src: 'assets/academy/IMG_2609.jpg',
+    thumb: 'assets/academy/thumbs/IMG_2609.jpg',
+    category: 'classroom',
+    title: 'Interactive Teacher-Student Discussions',
+    desc: 'Direct doubt resolution and conceptual clarity sessions under Praveen Sir.'
+  },
+  {
+    src: 'assets/academy/IMG_2602.jpg',
+    thumb: 'assets/academy/thumbs/IMG_2602.jpg',
+    category: 'classroom',
+    title: 'Dedicated Study & Formula Practice',
+    desc: 'Students practicing exam derivations and speed numerical problem sets.'
+  },
+  {
+    src: 'assets/academy/IMG_2600.jpg',
+    thumb: 'assets/academy/thumbs/IMG_2600.jpg',
+    category: 'facilities',
+    title: 'Small Batch Individual Mentorship',
+    desc: 'Ensuring every learner gets personalized attention and regular feedback.'
+  },
+  {
+    src: 'assets/academy/IMG_2601.jpg',
+    thumb: 'assets/academy/thumbs/IMG_2601.jpg',
+    category: 'facilities',
+    title: 'Smart Classroom Learning Environment',
+    desc: 'Air-conditioned modern classrooms designed for deep academic focus.'
+  },
+  {
+    src: 'assets/academy/_DSC4931.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4931.JPG',
+    category: 'speaking',
+    title: 'Public Speaking & Presentation Skills',
+    desc: 'Stage speaking drills helping students build natural confidence and vocal poise.'
+  },
+  {
+    src: 'assets/academy/_DSC4937.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4937.JPG',
+    category: 'speaking',
+    title: 'Debating & Group Discussions',
+    desc: 'Interactive peer speaking rounds developing strong articulation.'
+  },
+  {
+    src: 'assets/academy/_DSC4929.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4929.JPG',
+    category: 'speaking',
+    title: 'Stage Presence & Body Language Coaching',
+    desc: 'Practical speech practice eliminating stage fear and anxiety.'
+  },
+  {
+    src: 'assets/academy/_DSC4914.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4914.JPG',
+    category: 'classroom',
+    title: 'Science & Board Exam Preparation',
+    desc: 'Exam-oriented syllabus drilling, previous board questions, and test series.'
+  },
+  {
+    src: 'assets/academy/_DSC4909.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4909.JPG',
+    category: 'facilities',
+    title: 'One-on-One Mentoring & Feedback',
+    desc: 'Personalized performance reviews and customized doubt clearing.'
+  },
+  {
+    src: 'assets/academy/_DSC4911.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4911.JPG',
+    category: 'speaking',
+    title: 'Spoken English & Communication Mastery',
+    desc: 'Fluency drills, vocabulary enhancement, and interview readiness coaching.'
+  },
+  {
+    src: 'assets/academy/_DSC4894.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4894.JPG',
+    category: 'classroom',
+    title: 'Collaborative Study & Peer Learning',
+    desc: 'Students collaborating on complex problems and exam problem-solving.'
+  },
+  {
+    src: 'assets/academy/_DSC4892.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4892.JPG',
+    category: 'classroom',
+    title: 'Interactive Lecture Sessions',
+    desc: 'Concept breakdown connecting theory with intuitive practical insights.'
+  },
+  {
+    src: 'assets/academy/_DSC4887.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4887.JPG',
+    category: 'classroom',
+    title: 'Classroom Engagement & Participation',
+    desc: 'Active participation culture ensuring no student is left behind.'
+  },
+  {
+    src: 'assets/academy/_DSC4915.JPG',
+    thumb: 'assets/academy/thumbs/_DSC4915.JPG',
+    category: 'speaking',
+    title: 'Confidence & Personality Transformation',
+    desc: 'Holistic development preparing learners for academic and professional success.'
   }
 ];
 
