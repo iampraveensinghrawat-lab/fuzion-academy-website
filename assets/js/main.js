@@ -352,6 +352,25 @@ function applyCustomPhotoConfig() {
     return `assets/academy/thumbs/${filename}`;
   }
 
+  // 1. First apply global photo config (visible to all mobile phones and visitors worldwide)
+  if (window.FUZION_PHOTO_CONFIG && typeof window.FUZION_PHOTO_CONFIG === 'object') {
+    const gConfig = window.FUZION_PHOTO_CONFIG;
+    if (gConfig.hero) {
+      const heroImg = document.getElementById('heroCardImage');
+      if (heroImg) heroImg.src = resolveSrc(gConfig.hero);
+    }
+    if (Array.isArray(gConfig.gallery) && gConfig.gallery.length > 0) {
+      galleryData = gConfig.gallery.map(item => ({
+        src: resolveSrc(item.file),
+        thumb: resolveThumb(item.file),
+        category: item.category || 'classroom',
+        title: item.title || `Fuzion Academy (${item.file.replace(/\.[^/.]+$/, '')})`,
+        desc: item.desc || 'Real classroom and student activity session at Fuzion Academy.'
+      }));
+    }
+  }
+
+  // 2. Then overlay localStorage customization if configured locally on this browser
   if (customConfigRaw) {
     try {
       const config = JSON.parse(customConfigRaw);

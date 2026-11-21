@@ -47,6 +47,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/photos-list.js"></script>
+  <script src="assets/js/photos-config.js"></script>
   <style>
     .selected-card {
       border-color: #00FF66 !important;
@@ -93,9 +94,14 @@
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
 
-        <button id="saveConfigBtn" class="neon-glow-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          <span>Save & Apply to Website</span>
+        <button id="saveConfigBtn" class="px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-white/10 hover:bg-white/20 border border-white/20 text-white flex items-center gap-2 transition-all">
+          <svg class="w-4 h-4 text-[#00FF66]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+          <span>Save Preview</span>
+        </button>
+
+        <button id="publishToAllBtn" class="neon-glow-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>🌐 Publish to All Devices</span>
         </button>
       </div>
     </div>
@@ -265,6 +271,40 @@
     </div>
   </div>
 
+  <!-- Publish to All Devices Modal -->
+  <div id="publishModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden">
+    <div class="relative w-full max-w-lg liquid-glass-glow rounded-3xl p-6 sm:p-8 space-y-5 border border-white/10 text-white">
+      <div class="flex items-center justify-between pb-3 border-b border-white/10">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#00FF66] animate-pulse"></span>
+          <h3 class="text-xl font-black font-heading">Publish Setup to All Devices</h3>
+        </div>
+        <button id="closePublishModal" class="p-1.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-400 hover:text-white">✕</button>
+      </div>
+
+      <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+        To make your photo changes appear <strong>on all phones, tablets, and visitors worldwide on Vercel</strong>, choose either option below:
+      </p>
+
+      <div class="space-y-3 pt-2">
+        <button id="downloadConfigBtn" class="w-full py-3 px-4 rounded-xl bg-[#00FF66] text-black font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-emerald-950/50">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+          <span>1-Click Download "photos-config.js"</span>
+        </button>
+
+        <button id="copyConfigCodeBtn" class="w-full py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/15 text-slate-200 font-semibold text-xs sm:text-sm flex items-center justify-center gap-2 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span>Copy Configuration Code</span>
+        </button>
+      </div>
+
+      <div class="p-3.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-slate-300 space-y-1">
+        <p class="font-bold text-[#00FF66]">💡 After saving / downloading:</p>
+        <p>Save it to your project folder's <code class="text-emerald-300">assets/js/</code> directory, then run <strong class="text-white">push-to-github.bat</strong>. Vercel will automatically redeploy to all mobile devices!</p>
+      </div>
+    </div>
+  </div>
+
   <script>
     // Load Photo Registry (All converted photos)
     const basePhotoFilenames = (window.FUZION_ACADEMY_PHOTOS && window.FUZION_ACADEMY_PHOTOS.length)
@@ -355,6 +395,9 @@
         } catch (e) {
           console.error(e);
         }
+      }
+      if (window.FUZION_PHOTO_CONFIG && typeof window.FUZION_PHOTO_CONFIG === 'object') {
+        return JSON.parse(JSON.stringify(window.FUZION_PHOTO_CONFIG));
       }
       return {
         hero: defaultHeroPhoto,
@@ -634,6 +677,58 @@ const customGalleryData = ${JSON.stringify(currentConfig.gallery.map(g => ({
         showToast('✓ Code snippet copied to clipboard!');
       });
     });
+
+    // Publish to All Devices Modal Handlers
+    const publishModal = document.getElementById('publishModal');
+    const publishBtn = document.getElementById('publishToAllBtn');
+    const closePublishModal = document.getElementById('closePublishModal');
+    const downloadConfigBtn = document.getElementById('downloadConfigBtn');
+    const copyConfigCodeBtn = document.getElementById('copyConfigCodeBtn');
+
+    function generateConfigFileContent() {
+      return `/**\n * FUZION ACADEMY - GLOBAL PHOTO CONFIGURATION\n * This file controls active photos for ALL devices (smartphones, tablets, desktops).\n * Generated via Fuzion Photo Studio.\n */\nwindow.FUZION_PHOTO_CONFIG = ${JSON.stringify(currentConfig, null, 2)};\n`;
+    }
+
+    if (publishBtn && publishModal) {
+      publishBtn.addEventListener('click', () => {
+        saveConfig();
+        publishModal.classList.remove('hidden');
+      });
+    }
+
+    if (closePublishModal && publishModal) {
+      closePublishModal.addEventListener('click', () => {
+        publishModal.classList.add('hidden');
+      });
+      publishModal.addEventListener('click', (e) => {
+        if (e.target === publishModal) publishModal.classList.add('hidden');
+      });
+    }
+
+    if (downloadConfigBtn) {
+      downloadConfigBtn.addEventListener('click', () => {
+        const content = generateConfigFileContent();
+        const blob = new Blob([content], { type: 'application/javascript;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'photos-config.js';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showToast('✓ "photos-config.js" downloaded!');
+      });
+    }
+
+    if (copyConfigCodeBtn) {
+      copyConfigCodeBtn.addEventListener('click', () => {
+        const content = generateConfigFileContent();
+        navigator.clipboard.writeText(content).then(() => {
+          showToast('✓ Configuration code copied to clipboard!');
+        });
+      });
+    }
 
     // Save Button
     document.getElementById('saveConfigBtn').addEventListener('click', () => {
