@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuzion Academy - Photo Studio & Customizer</title>
+  <script>
+    if (localStorage.getItem('fuzion_theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/fuzion-icon.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#00FF66',
+              emerald: '#10b981',
+              dark: '#07090e',
+              card: 'rgba(15, 21, 32, 0.75)',
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Security & Privacy Directives -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/photos-list.js"></script>
+  <style>
+    .selected-card {
+      border-color: #00FF66 !important;
+      box-shadow: 0 0 20px rgba(0, 255, 102, 0.3) !important;
+    }
+    .hero-card-active {
+      border-color: #00f2fe !important;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.4) !important;
+    }
+  </style>
+</head>
+<body class="bg-[#07090e] text-slate-100 min-h-screen antialiased selection:bg-[#00FF66] selection:text-black">
+
+  <!-- Ambient Glows -->
+  <div class="ambient-glow-1 top-5 left-5 opacity-50"></div>
+  <div class="ambient-glow-2 bottom-10 right-10 opacity-50"></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-[#0c1017]/90 backdrop-blur-md border-b border-white/10 px-4 sm:px-8 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors">
+          <div class="w-9 h-9 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center p-1.5">
+            <img src="assets/logo/fuzion-icon.svg" alt="Fuzion Logo" class="w-full h-full object-contain">
+          </div>
+          <div>
+            <h1 class="text-lg font-black tracking-tight text-white font-heading">FUZION PHOTO STUDIO</h1>
+            <p class="text-[10px] text-slate-400">Pick & Replace Website Photos with 1 Click</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggleBtn" class="theme-toggle-btn px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all text-xs font-semibold" aria-label="Toggle Theme" title="Toggle Theme">
+          <span id="themeToggleIcon">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </span>
+          <span id="themeToggleLabel" class="hidden sm:inline">Theme</span>
+        </button>
+
+        <a href="index.html" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white flex items-center gap-2 transition-colors">
+          <span>View Live Website</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+
+        <button id="saveConfigBtn" class="neon-glow-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+          <span>Save & Apply to Website</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Notification Toast -->
+  <div id="toastMessage" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 bg-slate-900 border border-emerald-500/50 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+    <span class="w-3 h-3 rounded-full bg-[#00FF66] animate-ping"></span>
+    <span id="toastText" class="text-sm font-semibold text-slate-200">Changes Saved!</span>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10 relative z-10">
+
+    <!-- Active Selection Summary Bar -->
+    <section class="liquid-glass rounded-3xl p-6 sm:p-8 border-white/10 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-white/10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-cyan-500/10 text-cyan-300 border border-cyan-500/30 uppercase">
+            Live Configuration
+          </span>
+          <h2 class="text-2xl font-bold text-white mt-1 font-heading">Currently Selected For Your Website</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Below are the photos currently appearing in your Hero section and Gallery.</p>
+        </div>
+        
+        <div class="flex items-center gap-2">
+          <button id="resetDefaultsBtn" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-red-500/15 border border-white/10 hover:border-red-500/40 text-slate-300 hover:text-red-400 transition-colors">
+            Reset to Recommended Defaults
+          </button>
+          <button id="copyCodeBtn" class="px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/5 hover:bg-emerald-500/15 border border-white/10 hover:border-emerald-500/40 text-slate-300 hover:text-[#00FF66] transition-colors">
+            Copy Code Config
+          </button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Hero Card Photo Preview -->
+        <div class="lg:col-span-4 p-5 rounded-2xl bg-white/5 border border-cyan-500/30 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider font-mono">🌟 Hero Card Photo</span>
+            <span id="heroFilenameBadge" class="text-xs font-mono text-slate-300 bg-white/10 px-2 py-0.5 rounded">IMG_2550.jpg</span>
+          </div>
+          <div class="aspect-[4/3] rounded-xl overflow-hidden bg-slate-900 border border-white/10 shadow-lg relative group">
+            <img id="activeHeroPreview" src="assets/academy/IMG_2550.jpg" alt="Active Hero" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4 text-center">
+              <span class="text-xs text-white">To change this, click <strong>"Set as Hero Photo"</strong> on any picture below.</span>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-400 leading-relaxed">
+            This image appears prominently in the top Hero section next to Praveen Sir's mentorship badge.
+          </p>
+        </div>
+
+        <!-- Gallery Photos Preview -->
+        <div class="lg:col-span-8 space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-[#00FF66] uppercase tracking-wider font-mono">
+              📸 Gallery Photos (<span id="galleryCountBadge">12</span> selected)
+            </span>
+            <span class="text-xs text-slate-400">Click ✕ to remove any photo from gallery</span>
+          </div>
+
+          <div id="activeGalleryGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 max-h-72 overflow-y-auto p-2 rounded-2xl bg-slate-950/50 border border-white/5">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add & Import Local Photos Section -->
+    <section class="liquid-glass rounded-3xl p-6 sm:p-8 border-white/10 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-[#00FF66]/10 text-[#00FF66] border border-[#00FF66]/30 uppercase">
+            Add New Local Photos
+          </span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1 font-heading">Import New Photos From Your Computer</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Added new pictures to your academy folder? Import or scan them instantly below.</p>
+        </div>
+        
+        <div class="text-xs text-slate-300 flex items-center gap-2 bg-white/5 px-4 py-2 rounded-xl border border-white/10">
+          <span class="text-base">⚡</span>
+          <div>
+            <span class="text-slate-400">Pasted in <code class="text-emerald-400 font-mono font-bold">assets/academy/</code>?</span><br>
+            <span>Double-click <code class="text-[#00FF66] font-mono font-bold">update-photos.bat</code> to auto-sync</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Drag & Drop / File Input Box -->
+        <div id="dropZone" class="border-2 border-dashed border-white/20 hover:border-[#00FF66] rounded-2xl p-6 text-center cursor-pointer transition-all bg-white/5 hover:bg-emerald-500/5 flex flex-col items-center justify-center space-y-3">
+          <input type="file" id="localPhotoInput" multiple accept="image/*" class="hidden">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-[#00FF66] flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+          </div>
+          <div>
+            <p class="text-sm font-bold text-white">Click to Select Photos from Computer</p>
+            <p class="text-xs text-slate-400 mt-1">or drag & drop any image files here (JPG, PNG, WEBP)</p>
+          </div>
+          <span class="text-[11px] text-[#00FF66] font-mono font-semibold">Immediate live preview in Studio</span>
+        </div>
+
+        <!-- Add by Filename in assets/academy -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col justify-between space-y-4">
+          <div class="space-y-2">
+            <h3 class="text-sm font-bold text-white">Add by Filename in <code class="text-[#00FF66] font-mono">assets/academy/</code></h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              If you pasted an image file (e.g. <code class="text-slate-300 font-mono">praveen-sir.jpg</code> or <code class="text-slate-300 font-mono">class-new.png</code>) into <code class="text-slate-300 font-mono">assets/academy/</code>, type its filename here to register it immediately:
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="text" id="manualFilenameInput" placeholder="e.g. my-new-photo.jpg" class="flex-1 form-glass-input rounded-xl px-4 py-2.5 text-xs font-mono placeholder:text-slate-500">
+            <button id="addManualFilenameBtn" class="px-4 py-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black font-bold text-xs transition-colors border border-emerald-500/40 shrink-0">
+              + Add to Studio
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- All Available Photos Explorer -->
+    <section class="space-y-6">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-emerald-500/10 text-[#00FF66] border border-emerald-500/30 uppercase">
+            All 51 Converted Photos
+          </span>
+          <h2 class="text-2xl font-bold text-white mt-1 font-heading">Choose Any Photo From Your Academy Shoot</h2>
+          <p class="text-xs sm:text-sm text-slate-400">Converted directly from your Canon RAW CR2 files in the <code class="text-emerald-400 font-mono">FUZION</code> folder.</p>
+        </div>
+
+        <!-- Search / Filter input -->
+        <div class="flex items-center gap-3">
+          <div class="relative w-full sm:w-64">
+            <input type="text" id="photoSearch" placeholder="Search by name (e.g. 2555)..." class="w-full form-glass-input rounded-xl pl-9 pr-4 py-2 text-xs placeholder:text-slate-500">
+            <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Photo Cards Grid -->
+      <div id="allPhotosGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Image Lightbox Preview Modal -->
+  <div id="photoZoomModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md hidden">
+    <div class="relative max-w-4xl w-full flex flex-col items-center">
+      <div class="w-full flex justify-between items-center pb-3 text-white">
+        <span id="zoomFilename" class="font-mono text-sm font-bold text-[#00FF66]">IMG_2550.jpg</span>
+        <button id="closeZoomBtn" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <div class="w-full aspect-[16/10] bg-slate-950 rounded-2xl overflow-hidden border border-white/10">
+        <img id="zoomImg" src="" alt="Zoom preview" class="w-full h-full object-contain">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Load Photo Registry (All converted photos)
+    const basePhotoFilenames = (window.FUZION_ACADEMY_PHOTOS && window.FUZION_ACADEMY_PHOTOS.length)
+      ? [...window.FUZION_ACADEMY_PHOTOS]
+      : [
+        'IMG_2550.jpg','IMG_2552.jpg','IMG_2553.jpg','IMG_2554.jpg','IMG_2555.jpg',
+        'IMG_2556.jpg','IMG_2557.jpg','IMG_2558.jpg','IMG_2559.jpg','IMG_2560.jpg',
+        'IMG_2561.jpg','IMG_2562.jpg','IMG_2563.jpg','IMG_2564.jpg','IMG_2565.jpg',
+        'IMG_2566.jpg','IMG_2567.jpg','IMG_2568.jpg','IMG_2569.jpg','IMG_2570.jpg',
+        'IMG_2571.jpg','IMG_2572.jpg','IMG_2573.jpg','IMG_2574.jpg','IMG_2575.jpg',
+        'IMG_2576.jpg','IMG_2577.jpg','IMG_2578.jpg','IMG_2579.jpg','IMG_2580.jpg',
+        'IMG_2581.jpg','IMG_2582.jpg','IMG_2583.jpg','IMG_2584.jpg','IMG_2585.jpg',
+        'IMG_2591.jpg','IMG_2592.jpg','IMG_2593.jpg','IMG_2594.jpg','IMG_2595.jpg',
+        'IMG_2596.jpg','IMG_2600.jpg','IMG_2601.jpg','IMG_2602.jpg','IMG_2603.jpg',
+        'IMG_2605.jpg','IMG_2606.jpg','IMG_2607.jpg','IMG_2608.jpg','IMG_2609.jpg',
+        'IMG_2610.jpg'
+      ];
+
+    // Load any user-imported photos from localStorage
+    let customAddedPhotos = [];
+    try {
+      customAddedPhotos = JSON.parse(localStorage.getItem('fuzion_custom_added_photos') || '[]');
+    } catch (e) {
+      customAddedPhotos = [];
+    }
+
+    // Merge custom photos into photo catalog
+    let allPhotoFilenames = [...basePhotoFilenames];
+    customAddedPhotos.forEach(p => {
+      const name = typeof p === 'string' ? p : p.name;
+      if (!allPhotoFilenames.includes(name)) {
+        allPhotoFilenames.unshift(name);
+      }
+    });
+
+    // Defensive HTML escaping helper to prevent DOM XSS
+    function escapeHTML(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // Helper to get image URL (supports local assets, imported dataURLs, or custom paths)
+    function getPhotoSrc(file) {
+      const foundCustom = customAddedPhotos.find(p => (typeof p === 'object' && p.name === file));
+      if (foundCustom && foundCustom.dataUrl) return foundCustom.dataUrl;
+      if (file.startsWith('data:') || file.startsWith('http') || file.startsWith('blob:')) return file;
+      return `assets/academy/${file}`;
+    }
+
+    // Helper to get fast lightweight thumbnail (~17KB)
+    function getPhotoThumb(file) {
+      const foundCustom = customAddedPhotos.find(p => (typeof p === 'object' && p.name === file));
+      if (foundCustom && foundCustom.dataUrl) return foundCustom.dataUrl;
+      if (file.startsWith('data:') || file.startsWith('http') || file.startsWith('blob:')) return file;
+      return `assets/academy/thumbs/${file}`;
+    }
+
+    // Default configuration
+    const defaultHeroPhoto = 'IMG_2550.jpg';
+    const defaultGallery = [
+      { file: 'IMG_2550.jpg', title: 'Interactive Conceptual Mentorship', category: 'classroom', desc: 'Praveen Sir delivering focused problem-solving sessions at Fuzion Academy.' },
+      { file: 'IMG_2555.jpg', title: 'Public Speaking & Stage Presentations', category: 'speaking', desc: 'Students actively speaking and presenting on stage to overcome stage fear.' },
+      { file: 'IMG_2559.jpg', title: 'Small Batch Individual Attention', category: 'classroom', desc: 'Ensuring every student gets doubt resolution and personal guidance.' },
+      { file: 'IMG_2563.jpg', title: 'State-of-the-Art Learning Ambiance', category: 'facilities', desc: 'Comfortable, air-conditioned smart classrooms designed for deep focus.' },
+      { file: 'IMG_2567.jpg', title: 'Debates & Group Discussion Drills', category: 'speaking', desc: 'Engaging peer discussions on current topics and communication nuances.' },
+      { file: 'IMG_2571.jpg', title: 'Rigorous Board Exam Preparation', category: 'classroom', desc: 'Exam-oriented question analysis, speed drills, and mock test evaluations.' },
+      { file: 'IMG_2575.jpg', title: 'Dedicated Study & Practice Space', category: 'facilities', desc: 'Students utilizing quiet study resources and reference materials.' },
+      { file: 'IMG_2579.jpg', title: 'Confidence Transformation Activities', category: 'speaking', desc: 'Instilling poise, body language awareness, and vocal clarity.' },
+      { file: 'IMG_2583.jpg', title: 'Science & Math Formula Demystification', category: 'classroom', desc: 'Breaking down tough physics and calculus derivations into intuitive steps.' },
+      { file: 'IMG_2592.jpg', title: 'Mentor-Student One-on-One Consultations', category: 'facilities', desc: 'Regular progress tracking and career counseling with parents and students.' },
+      { file: 'IMG_2596.jpg', title: 'Interview & Presentation Rehearsals', category: 'speaking', desc: 'Mock interview rounds building placement readiness and executive presence.' },
+      { file: 'IMG_2603.jpg', title: 'Student Milestone Celebrations', category: 'classroom', desc: 'Acknowledging board toppers and communication graduates at Fuzion Academy.' }
+    ];
+
+    // State loaded from localStorage or defaults
+    let currentConfig = loadConfig();
+
+    function loadConfig() {
+      const saved = localStorage.getItem('fuzion_photos_config');
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch (e) {
+          console.error(e);
+        }
+      }
+      return {
+        hero: defaultHeroPhoto,
+        gallery: JSON.parse(JSON.stringify(defaultGallery))
+      };
+    }
+
+    function saveConfig() {
+      localStorage.setItem('fuzion_photos_config', JSON.stringify(currentConfig));
+      localStorage.setItem('fuzion_custom_added_photos', JSON.stringify(customAddedPhotos));
+      showToast('✓ Photo choices saved! Live website updated.');
+      renderActiveSummary();
+      renderAllPhotos();
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toastMessage');
+      const text = document.getElementById('toastText');
+      text.textContent = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0');
+      }, 3000);
+    }
+
+    // Render Active Summary Bar
+    function renderActiveSummary() {
+      const heroThumb = getPhotoThumb(currentConfig.hero);
+      const heroFallback = getPhotoSrc(currentConfig.hero);
+      const heroImg = document.getElementById('activeHeroPreview');
+      heroImg.src = heroThumb;
+      heroImg.onerror = () => { heroImg.src = heroFallback; };
+      document.getElementById('heroFilenameBadge').textContent = currentConfig.hero;
+      document.getElementById('galleryCountBadge').textContent = currentConfig.gallery.length;
+
+      const galleryGrid = document.getElementById('activeGalleryGrid');
+      galleryGrid.innerHTML = '';
+
+      currentConfig.gallery.forEach((item, index) => {
+        const itemThumb = getPhotoThumb(item.file);
+        const itemFallback = getPhotoSrc(item.file);
+        const itemEl = document.createElement('div');
+        itemEl.className = 'relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-900 border border-white/10 group';
+        itemEl.innerHTML = `
+          <img src="${escapeHTML(itemThumb)}" onerror="this.onerror=null;this.src='${escapeHTML(itemFallback)}'" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-1.5">
+            <span class="text-[9px] font-mono font-bold text-[#00FF66] truncate">${escapeHTML(item.file)}</span>
+            <button class="remove-gallery-item self-end p-1 rounded-full bg-red-500/80 hover:bg-red-500 text-white" title="Remove from gallery">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+          </div>
+        `;
+
+        itemEl.querySelector('.remove-gallery-item').addEventListener('click', (e) => {
+          e.stopPropagation();
+          currentConfig.gallery.splice(index, 1);
+          saveConfig();
+        });
+
+        galleryGrid.appendChild(itemEl);
+      });
+    }
+
+    // Render All Photos
+    function renderAllPhotos(searchTerm = '') {
+      const container = document.getElementById('allPhotosGrid');
+      container.innerHTML = '';
+
+      const term = searchTerm.toLowerCase().trim();
+      const filtered = allPhotoFilenames.filter(f => f.toLowerCase().includes(term));
+
+      filtered.forEach(file => {
+        const isHero = currentConfig.hero === file;
+        const galleryIndex = currentConfig.gallery.findIndex(g => g.file === file);
+        const inGallery = galleryIndex !== -1;
+        const photoSrc = getPhotoSrc(file);
+        const photoThumb = getPhotoThumb(file);
+
+        const card = document.createElement('div');
+        card.className = `liquid-glass rounded-2xl p-4 border flex flex-col justify-between transition-all ${isHero ? 'hero-card-active' : (inGallery ? 'selected-card' : 'border-white/10')}`;
+        
+        card.innerHTML = `
+          <div class="space-y-3">
+            <div class="zoom-trigger-wrap relative aspect-[4/3] rounded-xl overflow-hidden bg-slate-900 border border-white/10 cursor-pointer group">
+              <img src="${escapeHTML(photoThumb)}" onerror="this.onerror=null;this.src='${escapeHTML(photoSrc)}'" alt="${escapeHTML(file)}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              
+              <!-- Badges on image -->
+              <div class="absolute top-2 left-2 flex flex-col gap-1">
+                ${isHero ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-cyan-500 text-black">HERO PHOTO</span>' : ''}
+                ${inGallery ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-[#00FF66] text-black">IN GALLERY</span>' : ''}
+              </div>
+
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="text-xs font-semibold text-white bg-black/70 px-2.5 py-1 rounded-full border border-white/20">🔍 Click to Zoom</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="text-white font-bold truncate pr-2">${escapeHTML(file)}</span>
+              <span class="text-slate-400 text-[10px] shrink-0">Ready</span>
+            </div>
+          </div>
+
+          <div class="pt-4 mt-3 border-t border-white/10 space-y-2">
+            <button class="set-hero-btn w-full py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${isHero ? 'bg-cyan-500 text-black font-extrabold' : 'bg-white/5 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'}">
+              <span>${isHero ? '★ Current Hero Photo' : '📌 Set as Hero Photo'}</span>
+            </button>
+
+            <button class="toggle-gallery-btn w-full py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${inGallery ? 'bg-red-500/20 text-red-300 border border-red-500/30 hover:bg-red-500/30' : 'bg-emerald-500/15 text-[#00FF66] border border-emerald-500/30 hover:bg-emerald-500/25'}">
+              <span>${inGallery ? '✕ Remove from Gallery' : '➕ Add to Gallery'}</span>
+            </button>
+          </div>
+        `;
+
+        // Safe click event listener for zoom
+        card.querySelector('.zoom-trigger-wrap').addEventListener('click', () => zoomPhoto(file));
+
+        // Handle Set as Hero
+        card.querySelector('.set-hero-btn').addEventListener('click', () => {
+          currentConfig.hero = file;
+          saveConfig();
+        });
+
+        // Handle Toggle Gallery
+        card.querySelector('.toggle-gallery-btn').addEventListener('click', () => {
+          if (inGallery) {
+            currentConfig.gallery.splice(galleryIndex, 1);
+          } else {
+            currentConfig.gallery.push({
+              file: file,
+              title: `Fuzion Academy (${file.replace(/\.[^/.]+$/, '')})`,
+              category: 'classroom',
+              desc: 'Interactive mentoring and student activities at Fuzion Academy Sector-11 Pratap Vihar.'
+            });
+          }
+          saveConfig();
+        });
+
+        container.appendChild(card);
+      });
+    }
+
+    // Handle Local File Selection & Drag-and-Drop
+    const dropZone = document.getElementById('dropZone');
+    const localInput = document.getElementById('localPhotoInput');
+
+    if (dropZone && localInput) {
+      dropZone.addEventListener('click', () => localInput.click());
+
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-[#00FF66]', 'bg-emerald-500/10');
+      });
+
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('border-[#00FF66]', 'bg-emerald-500/10');
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-[#00FF66]', 'bg-emerald-500/10');
+        if (e.dataTransfer.files && e.dataTransfer.files.length) {
+          handleIncomingFiles(e.dataTransfer.files);
+        }
+      });
+
+      localInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files.length) {
+          handleIncomingFiles(e.target.files);
+        }
+      });
+    }
+
+    function handleIncomingFiles(fileList) {
+      let count = 0;
+      Array.from(fileList).forEach(file => {
+        if (!file.type.startsWith('image/')) return;
+        if (file.size > 25 * 1024 * 1024) {
+          showToast(`File "${file.name}" exceeds 25MB limit.`);
+          return;
+        }
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+          const dataUrl = ev.target.result;
+          const fileName = file.name.replace(/[^\w\s.-]/gi, '_').trim();
+
+          // Add or replace in customAddedPhotos
+          const existingIdx = customAddedPhotos.findIndex(p => p.name === fileName);
+          if (existingIdx !== -1) {
+            customAddedPhotos[existingIdx].dataUrl = dataUrl;
+          } else {
+            customAddedPhotos.unshift({ name: fileName, dataUrl: dataUrl });
+          }
+
+          if (!allPhotoFilenames.includes(fileName)) {
+            allPhotoFilenames.unshift(fileName);
+          }
+
+          count++;
+          saveConfig();
+        };
+        reader.readAsDataURL(file);
+      });
+
+      setTimeout(() => {
+        showToast(`✓ Imported ${fileList.length} photo(s) into your Studio!`);
+      }, 500);
+    }
+
+    // Handle Add by Manual Filename
+    const manualBtn = document.getElementById('addManualFilenameBtn');
+    const manualInput = document.getElementById('manualFilenameInput');
+
+    if (manualBtn && manualInput) {
+      const addManual = () => {
+        const val = manualInput.value.trim();
+        if (!val) return;
+        if (!allPhotoFilenames.includes(val)) {
+          allPhotoFilenames.unshift(val);
+          customAddedPhotos.unshift({ name: val, dataUrl: null });
+          saveConfig();
+          showToast(`✓ Registered "${val}" in Photo Studio!`);
+          manualInput.value = '';
+        } else {
+          showToast(`"${val}" is already in the Studio!`);
+        }
+      };
+
+      manualBtn.addEventListener('click', addManual);
+      manualInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') addManual();
+      });
+    }
+
+    // Zoom Lightbox
+    window.zoomPhoto = function(file) {
+      const modal = document.getElementById('photoZoomModal');
+      document.getElementById('zoomImg').src = `assets/academy/${file}`;
+      document.getElementById('zoomFilename').textContent = file;
+      modal.classList.remove('hidden');
+    };
+
+    document.getElementById('closeZoomBtn').addEventListener('click', () => {
+      document.getElementById('photoZoomModal').classList.add('hidden');
+    });
+
+    document.getElementById('photoZoomModal').addEventListener('click', (e) => {
+      if (e.target.id === 'photoZoomModal') {
+        document.getElementById('photoZoomModal').classList.add('hidden');
+      }
+    });
+
+    // Reset Defaults
+    document.getElementById('resetDefaultsBtn').addEventListener('click', () => {
+      if (confirm('Reset website photos to original recommended selection?')) {
+        currentConfig = {
+          hero: defaultHeroPhoto,
+          gallery: JSON.parse(JSON.stringify(defaultGallery))
+        };
+        saveConfig();
+      }
+    });
+
+    // Copy Code Config
+    document.getElementById('copyCodeBtn').addEventListener('click', () => {
+      const snippet = `// Copy this into assets/js/main.js to permanently hardcode:
+const customHeroPhoto = 'assets/academy/${currentConfig.hero}';
+const customGalleryData = ${JSON.stringify(currentConfig.gallery.map(g => ({
+  src: `assets/academy/${g.file}`,
+  thumb: `assets/academy/${g.file}`,
+  category: g.category,
+  title: g.title,
+  desc: g.desc
+})), null, 2)};`;
+
+      navigator.clipboard.writeText(snippet).then(() => {
+        showToast('✓ Code snippet copied to clipboard!');
+      });
+    });
+
+    // Save Button
+    document.getElementById('saveConfigBtn').addEventListener('click', () => {
+      saveConfig();
+    });
+
+    // Search Filter
+    document.getElementById('photoSearch').addEventListener('input', (e) => {
+      renderAllPhotos(e.target.value);
+    });
+
+    // Theme Toggle Handler
+    function initStudioTheme() {
+      const root = document.documentElement;
+      const savedTheme = localStorage.getItem('fuzion_theme');
+      const updateIcon = (isLight) => {
+        const iconEl = document.getElementById('themeToggleIcon');
+        const labelEl = document.getElementById('themeToggleLabel');
+        if (iconEl) {
+          iconEl.innerHTML = isLight
+            ? `<svg class="w-4 h-4 text-indigo-500 fill-current" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>`
+            : `<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>`;
+        }
+        if (labelEl) labelEl.textContent = isLight ? 'Dark' : 'Light';
+      };
+
+      if (savedTheme === 'light') {
+        root.classList.remove('dark');
+        root.classList.add('light');
+        updateIcon(true);
+      } else {
+        root.classList.remove('light');
+        root.classList.add('dark');
+        updateIcon(false);
+      }
+
+      const toggleBtn = document.getElementById('themeToggleBtn');
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+          const isLight = root.classList.contains('light');
+          if (isLight) {
+            root.classList.remove('light');
+            root.classList.add('dark');
+            localStorage.setItem('fuzion_theme', 'dark');
+            updateIcon(false);
+          } else {
+            root.classList.remove('dark');
+            root.classList.add('light');
+            localStorage.setItem('fuzion_theme', 'light');
+            updateIcon(true);
+          }
+        });
+      }
+    }
+
+    // Initialize
+    initStudioTheme();
+    renderActiveSummary();
+    renderAllPhotos();
+  </script>
+
+</body>
+</html>

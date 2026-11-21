@@ -1,0 +1,594 @@
+/* ==========================================================================
+   FUZION ACADEMY - LIQUID GLASS & NEON EMERALD DESIGN SYSTEM
+   Supports both DARK MODE (Default Obsidian) & LIGHT MODE (Pearlescent Glass)
+   Helpline: 9582774387 | Sector-11, Pratap Vihar, Ghaziabad
+   ========================================================================== */
+
+
+:root {
+  /* DARK MODE (Default) */
+  --bg-deep: #07090e;
+  --bg-dark: #0c1017;
+  --bg-card: rgba(15, 21, 32, 0.75);
+  --bg-card-hover: rgba(22, 30, 46, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(0, 255, 102, 0.35);
+  --glass-blur: blur(18px);
+
+  --neon-green: #00FF66;
+  --neon-emerald: #10b981;
+  --neon-glow: 0 0 24px rgba(0, 255, 102, 0.35);
+  --neon-glow-lg: 0 0 45px rgba(0, 255, 102, 0.45);
+  --cyan-accent: #00f2fe;
+  
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --text-dim: #64748b;
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'Space Grotesk', monospace;
+}
+
+/* LIGHT THEME VARIABLES */
+html.light {
+  color-scheme: light;
+  --bg-deep: #f8fafc;
+  --bg-dark: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-border-hover: rgba(16, 185, 129, 0.4);
+  --glass-blur: blur(16px);
+
+  --neon-green: #059669;
+  --neon-emerald: #10b981;
+  --neon-glow: 0 0 24px rgba(16, 185, 129, 0.2);
+  --neon-glow-lg: 0 0 45px rgba(16, 185, 129, 0.25);
+  --cyan-accent: #0284c7;
+  
+  --text-main: #0f172a;
+  --text-sub: #475569;
+  --text-dim: #64748b;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hardware-Accelerated High-Performance Fixed Background (Eliminates Scroll Jank) */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(0, 255, 102, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(0, 242, 254, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Light Mode Background */
+html.light body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.light body::before {
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 85% 65%, rgba(6, 182, 212, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(5, 150, 105, 0.06) 0%, transparent 50%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #090d15;
+}
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 102, 0.25);
+  border-radius: 9999px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.4);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-green);
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 10%, #a7f3d0 60%, #00FF66 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-neon {
+  background: linear-gradient(135deg, #00FF66 0%, #10b981 50%, #00f2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Light mode text gradients */
+html.light .text-gradient {
+  background: linear-gradient(135deg, #0f172a 10%, #059669 60%, #10b981 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light .text-gradient-neon {
+  background: linear-gradient(135deg, #059669 0%, #0284c7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Content Visibility Optimization for Instant Rendering */
+.section-fast-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
+}
+
+/* Liquid Glass Containers */
+.liquid-glass {
+  background: var(--bg-card);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  transform: translateZ(0);
+}
+
+.liquid-glass:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 102, 0.12);
+}
+
+.liquid-glass-glow {
+  background: rgba(14, 20, 31, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 102, 0.25);
+  box-shadow: var(--neon-glow);
+}
+
+/* Light mode liquid glass */
+html.light .liquid-glass {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.light .liquid-glass:hover {
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(16, 185, 129, 0.12) !important;
+}
+
+html.light .liquid-glass-glow {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* Glowing Neon Buttons */
+.neon-glow-btn {
+  position: relative;
+  background: linear-gradient(135deg, #00FF66 0%, #059669 100%);
+  color: #06140b;
+  font-weight: 700;
+  box-shadow: 0 0 18px rgba(0, 255, 102, 0.45);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.neon-glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(0, 255, 102, 0.7);
+  color: #000;
+}
+
+html.light .neon-glow-btn {
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.35);
+}
+
+html.light .neon-glow-btn:hover {
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+  color: #ffffff;
+}
+
+.neon-outline-btn {
+  background: rgba(0, 255, 102, 0.05);
+  border: 1px solid rgba(0, 255, 102, 0.35);
+  color: #00FF66;
+  transition: all 0.3s ease;
+}
+
+.neon-outline-btn:hover {
+  background: rgba(0, 255, 102, 0.15);
+  border-color: #00FF66;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+  transform: translateY(-2px);
+}
+
+html.light .neon-outline-btn {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #047857;
+}
+
+html.light .neon-outline-btn:hover {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: #059669;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* Floating Ambient Orbs (GPU Cached) */
+.ambient-glow-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 255, 102, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  contain: strict;
+  transform: translateZ(0);
+}
+
+.ambient-glow-2 {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 242, 254, 0.08) 0%, transparent 70%);
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  contain: strict;
+  transform: translateZ(0);
+}
+
+html.light .ambient-glow-1 {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+}
+html.light .ambient-glow-2 {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 70%);
+}
+
+/* Floating WhatsApp Button Animation */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.7);
+  animation: pulse-ring 2.2s infinite;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 74px;
+  background: rgba(12, 16, 23, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 255, 102, 0.3);
+  color: #fff;
+  padding: 7px 14px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+html.light .whatsapp-tooltip {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: rgba(16, 185, 129, 0.4);
+  color: #0f172a;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+}
+
+.whatsapp-float:hover .whatsapp-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Modals */
+.modal-backdrop {
+  background: rgba(5, 7, 11, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+html.light .modal-backdrop {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(12px);
+}
+
+.modal-content {
+  transform: scale(0.95) translateY(20px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-open .modal-content {
+  transform: scale(1) translateY(0);
+}
+
+/* Tab active state */
+.course-tab.active {
+  background: rgba(0, 255, 102, 0.15);
+  border-color: #00FF66;
+  color: #00FF66;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.25);
+}
+
+html.light .course-tab.active {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: #059669 !important;
+  color: #047857 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Gallery light zoom */
+.gallery-img-wrap {
+  overflow: hidden;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.gallery-img-wrap img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+}
+
+.gallery-img-wrap:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+/* Google Maps Styling */
+.dark-map-container iframe {
+  filter: grayscale(90%) invert(92%) contrast(85%) hue-rotate(180deg);
+  border-radius: 1rem;
+  transition: filter 0.3s ease;
+}
+.dark-map-container:hover iframe {
+  filter: grayscale(60%) invert(92%) contrast(90%) hue-rotate(180deg);
+}
+
+html.light .dark-map-container iframe {
+  filter: none !important;
+}
+
+/* Counter numbers */
+.stat-counter {
+  font-family: var(--font-heading);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Form styling */
+.form-glass-input {
+  background: rgba(11, 16, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+.form-glass-input:focus {
+  outline: none;
+  border-color: #00FF66;
+  box-shadow: 0 0 15px rgba(0, 255, 102, 0.25);
+  background: rgba(15, 22, 35, 0.95);
+}
+
+.form-glass-input option {
+  background-color: #0d121c;
+  color: #f8fafc;
+}
+
+/* Light mode form input */
+html.light .form-glass-input {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(15, 23, 42, 0.15) !important;
+  color: #0f172a !important;
+}
+
+html.light .form-glass-input option {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+html.light .form-glass-input:focus {
+  border-color: #059669 !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* Testimonial slider custom styling */
+.swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+html.light .swiper-pagination-bullet {
+  background: rgba(15, 23, 42, 0.25) !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00FF66 !important;
+  width: 28px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 12px rgba(0, 255, 102, 0.6);
+}
+
+html.light .swiper-pagination-bullet-active {
+  background: #059669 !important;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4) !important;
+}
+
+/* ==========================================================================
+   LIGHT MODE GENERAL OVERRIDES FOR TAILWIND COLORS
+   ========================================================================== */
+html.light .text-white { color: #0f172a !important; }
+html.light .text-slate-100 { color: #0f172a !important; }
+html.light .text-slate-200 { color: #1e293b !important; }
+html.light .text-slate-300 { color: #334155 !important; }
+html.light .text-slate-400 { color: #64748b !important; }
+html.light .text-slate-500 { color: #94a3b8 !important; }
+
+html.light .bg-\[\#07090e\] { background-color: #f8fafc !important; }
+html.light .bg-\[\#090e17\]\/80 { background-color: rgba(241, 245, 249, 0.85) !important; }
+html.light .bg-\[\#0c1017\] { background-color: #ffffff !important; }
+html.light .bg-\[\#0c121d\] { background-color: #ffffff !important; }
+html.light .bg-\[\#0c1017\]\/95 { background-color: rgba(255, 255, 255, 0.96) !important; }
+html.light .bg-\[\#0c121d\]\/95 { background-color: rgba(255, 255, 255, 0.96) !important; }
+html.light .bg-\[\#06080d\] { background-color: #f1f5f9 !important; }
+html.light .bg-slate-900 { background-color: #e2e8f0 !important; }
+html.light .bg-slate-900\/90 { background-color: rgba(241, 245, 249, 0.95) !important; }
+html.light .bg-slate-950 { background-color: #ffffff !important; }
+html.light .bg-slate-950\/85 { background-color: rgba(255, 255, 255, 0.9) !important; }
+html.light .bg-slate-950\/90 { background-color: rgba(255, 255, 255, 0.92) !important; }
+
+html.light .bg-white\/5 { background-color: rgba(15, 23, 42, 0.04) !important; }
+html.light .bg-white\/10 { background-color: rgba(15, 23, 42, 0.08) !important; }
+html.light .border-white\/10 { border-color: rgba(15, 23, 42, 0.08) !important; }
+html.light .border-white\/5 { border-color: rgba(15, 23, 42, 0.05) !important; }
+html.light .border-white\/15 { border-color: rgba(15, 23, 42, 0.12) !important; }
+
+html.light .bg-emerald-950\/80 { background-color: rgba(209, 250, 229, 0.8) !important; }
+html.light .bg-emerald-950\/60 { background-color: rgba(209, 250, 229, 0.6) !important; }
+
+html.light .bg-black\/70 { background-color: rgba(15, 23, 42, 0.4) !important; }
+html.light .bg-black\/80 { background-color: rgba(15, 23, 42, 0.5) !important; }
+html.light .bg-black\/90 { background-color: rgba(15, 23, 42, 0.7) !important; }
+
+/* 1-Minute Discount Popup Pulse & Ribbon */
+.discount-ribbon {
+  background: linear-gradient(135deg, #FF6B00 0%, #FF0055 100%);
+  box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);
+}
+
+.discount-code-box {
+  background: rgba(0, 255, 102, 0.1);
+  border: 1px dashed #00FF66;
+}
+
+html.light .discount-code-box {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px dashed #059669;
+}
+
+/* Floating discount test trigger */
+.discount-floating-pill {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 998;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.discount-floating-pill:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Theme Switcher Button */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #00FF66;
+  color: #00FF66;
+}
+
+html.light .theme-toggle-btn {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #0f172a;
+}
+
+html.light .theme-toggle-btn:hover {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: #059669;
+  color: #047857;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+  }
+  .discount-floating-pill {
+    bottom: 20px;
+    left: 20px;
+  }
+}

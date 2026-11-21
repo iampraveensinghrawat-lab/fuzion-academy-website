@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuzion Academy | Premier Academic & Skill Development Institute | Ghaziabad</title>
+  <script>
+    if (localStorage.getItem('fuzion_theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.add('light');
+    } else {
+      document.documentElement.classList.remove('light');
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+  <meta name="description" content="Fuzion Academy - Premier Coaching for Classes 9th-12th (Maths, Physics, Chemistry, English) and Professional Soft Skills & Spoken English in Sector-11, Pratap Vihar, Ghaziabad. Led by Praveen Singh Rawat. Helpline: 9582774387.">
+  <meta name="keywords" content="Fuzion Academy, Coaching in Pratap Vihar, Ghaziabad Tuition, Class 11 12 PCM Coaching, Spoken English Ghaziabad, Public Speaking, Praveen Singh Rawat">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/fuzion-icon.svg">
+
+  <!-- Security & Privacy Directives -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#00FF66',
+              emerald: '#10b981',
+              dark: '#07090e',
+              card: 'rgba(15, 21, 32, 0.75)',
+              cyan: '#00f2fe'
+            }
+          },
+          fontFamily: {
+            heading: ['Outfit', 'sans-serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Preconnect to Google Fonts for lightning-fast font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS for carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Custom Liquid Glass CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#07090e] text-slate-100 antialiased selection:bg-[#00FF66] selection:text-black min-h-screen relative">
+
+  <!-- Ambient background glow spots -->
+  <div class="ambient-glow-1 top-10 left-10 opacity-70"></div>
+  <div class="ambient-glow-2 top-[35%] right-5 opacity-60"></div>
+  <div class="ambient-glow-1 bottom-[20%] left-1/4 opacity-50"></div>
+
+  <!-- Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-950/80 via-[#0a121e] to-emerald-950/80 border-b border-emerald-500/20 py-2 px-4 text-xs md:text-sm text-center font-medium text-slate-300 relative z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-3 flex-wrap">
+      <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-[#00FF66]/20 text-[#00FF66] border border-[#00FF66]/30">
+        ADMISSIONS OPEN
+      </span>
+      <span>Target 95%+ in 2025-26 Board Exams & Master English Fluency</span>
+      <span class="hidden sm:inline text-slate-500">•</span>
+      <a href="tel:9582774387" class="inline-flex items-center gap-1 text-[#00FF66] hover:underline font-semibold">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+        Helpline: 9582774387
+      </a>
+      <span class="hidden sm:inline text-slate-500">•</span>
+      <a href="photo-selector.html" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 hover:bg-cyan-500/25 border border-cyan-500/30 transition-all">
+        <span>📸 Photo Studio (Customize Photos)</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- 1. NAVIGATION BAR -->
+  <header id="mainNavbar" class="sticky top-0 z-40 w-full transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Branding -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-500/20 to-slate-900 border border-[#00FF66]/30 flex items-center justify-center shadow-lg shadow-emerald-950/50 group-hover:border-[#00FF66] transition-colors p-1.5">
+          <img src="assets/logo/fuzion-icon.svg" alt="Fuzion Icon" class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-2xl font-black tracking-tight text-white font-heading">FUZION</span>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#00FF66] bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">ACADEMY</span>
+          </div>
+          <span class="text-[10px] uppercase tracking-wider text-slate-400 font-medium">Fusion of Online & Offline Learning</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-[#00FF66] transition-colors">About</a>
+        <a href="#courses" class="hover:text-[#00FF66] transition-colors">Courses & Syllabus</a>
+        <a href="#results" class="hover:text-[#00FF66] transition-colors">Results & Toppers</a>
+        <a href="#schedule" class="hover:text-[#00FF66] transition-colors">Batch Timings</a>
+        <a href="#testimonials" class="hover:text-[#00FF66] transition-colors">Reviews</a>
+        <a href="#gallery" class="hover:text-[#00FF66] transition-colors">Campus Gallery</a>
+        <a href="#location" class="hover:text-[#00FF66] transition-colors">Location</a>
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-trigger theme-toggle-btn px-3 py-2 rounded-xl flex items-center gap-1.5 transition-all text-xs font-semibold" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+          <span class="theme-toggle-icon">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </span>
+          <span class="theme-toggle-label hidden md:inline">Theme</span>
+        </button>
+
+        <a href="tel:9582774387" class="text-sm font-semibold text-slate-300 hover:text-white flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-white/5 transition-all">
+          <svg class="w-4 h-4 text-[#00FF66]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <span>9582774387</span>
+        </a>
+        <a href="#register" class="neon-glow-btn px-5 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2">
+          <span>Book Free Demo</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Right Controls (Theme + Hamburger) -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button class="theme-toggle-trigger theme-toggle-btn p-2 rounded-xl flex items-center justify-center" aria-label="Toggle Theme">
+          <span class="theme-toggle-icon">
+            <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </span>
+        </button>
+        <button id="mobileMenuToggle" aria-label="Toggle Navigation Menu" class="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer (Frosted Liquid Glass) -->
+  <div id="mobileMenuDrawer" class="fixed inset-0 z-50 transform translate-x-full transition-transform duration-300 lg:hidden flex justify-end">
+    <div class="fixed inset-0 bg-black/70 backdrop-blur-sm" id="closeMobileMenu"></div>
+    <div class="relative w-4/5 max-w-sm h-full bg-[#0c1017]/95 border-l border-white/10 p-6 flex flex-col justify-between overflow-y-auto backdrop-blur-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-white/10">
+          <div class="flex items-center gap-2">
+            <img src="assets/logo/fuzion-icon.svg" alt="Fuzion" class="w-8 h-8">
+            <span class="font-heading font-extrabold text-lg text-white">FUZION ACADEMY</span>
+          </div>
+          <button id="closeMobileMenuBtn" class="p-2 text-slate-400 hover:text-white rounded-lg bg-white/5" onclick="document.getElementById('mobileMenuDrawer').classList.add('translate-x-full'); document.body.classList.remove('overflow-hidden');">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+          </button>
+        </div>
+
+        <nav class="flex flex-col gap-4 mt-6 text-base font-semibold text-slate-300">
+          <a href="#about" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">About Institute</a>
+          <a href="#courses" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Courses & Syllabus</a>
+          <a href="#results" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Results & Toppers</a>
+          <a href="#schedule" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Batch Timings</a>
+          <a href="#testimonials" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Student Reviews</a>
+          <a href="#gallery" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Campus Gallery</a>
+          <a href="#location" class="mobile-nav-link py-2 hover:text-[#00FF66] transition-colors border-b border-white/5">Location & Contact</a>
+        </nav>
+      </div>
+
+      <div class="pt-6 border-t border-white/10 space-y-4">
+        <div class="text-xs text-slate-400">
+          <p class="font-bold text-white mb-1">Sector-11, Pratap Vihar</p>
+          <p>Ghaziabad, Uttar Pradesh</p>
+          <p class="mt-2 text-[#00FF66] font-mono font-bold text-sm">Call: 9582774387</p>
+        </div>
+        <a href="#register" class="mobile-nav-link block text-center neon-glow-btn py-3 rounded-xl font-bold text-sm">
+          Book Free Demo Class
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. HERO SECTION -->
+  <section id="hero" class="relative pt-8 pb-20 md:pt-16 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text & Left Column -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Badges & Accreditations -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass border-emerald-500/30 text-xs md:text-sm font-semibold text-emerald-400 mx-auto lg:mx-0">
+            <span class="w-2 h-2 rounded-full bg-[#00FF66] animate-ping"></span>
+            <span>8+ Years of Academic Excellence</span>
+            <span class="text-slate-500">•</span>
+            <span class="text-slate-300">3,000+ Students Mentored</span>
+          </div>
+
+          <!-- Main Hero Headline -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-black tracking-tight leading-[1.1] font-heading">
+            Master Your <span class="text-gradient">Boards</span> & Unleash Fluent <span class="text-gradient-neon">Communication</span>
+          </h1>
+
+          <!-- Hero Subheadline -->
+          <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Ghaziabad’s premier destination for CBSE & ICSE Academic Coaching (Classes 9th–12th) and transformational Soft Skills, Spoken English, and Public Speaking under the personal mentorship of <strong class="text-white font-bold underline decoration-[#00FF66]/50 decoration-2">Praveen Singh Rawat</strong>.
+          </p>
+
+          <!-- Quick-View Contact Pill -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm text-slate-300">
+              <span class="text-[#00FF66]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </span>
+              <span>Helpline: <strong class="text-white font-mono font-bold tracking-wide">9582774387</strong></span>
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/5 border border-white/10 text-xs md:text-sm text-slate-300">
+              <span class="text-[#00FF66]">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </span>
+              <span>Campus: <strong class="text-white">Sector-11, Pratap Vihar, Ghaziabad</strong></span>
+            </div>
+          </div>
+
+          <!-- Primary CTAs -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#register" class="w-full sm:w-auto neon-glow-btn px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3">
+              <span>Register for a Free Demo</span>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <a href="#courses" class="w-full sm:w-auto neon-outline-btn px-7 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-2">
+              <span>Explore Courses & Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </a>
+          </div>
+
+          <!-- Trust metrics snippet -->
+          <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="text-2xl md:text-3xl font-black text-white font-heading">95%+</p>
+              <p class="text-xs text-slate-400 font-medium">Top Board Scores</p>
+            </div>
+            <div>
+              <p class="text-2xl md:text-3xl font-black text-[#00FF66] font-heading">3,000+</p>
+              <p class="text-xs text-slate-400 font-medium">Alumni Mentored</p>
+            </div>
+            <div>
+              <p class="text-2xl md:text-3xl font-black text-white font-heading">100%</p>
+              <p class="text-xs text-slate-400 font-medium">Confidence Boost</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Liquid Glass Interactive Card with Real Academy Photo -->
+        <div class="lg:col-span-5 relative">
+          
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            <!-- Background glow behind card -->
+            <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-[#00FF66]/30 via-emerald-600/20 to-cyan-500/30 blur-2xl opacity-70"></div>
+            
+            <!-- Main Hero Glass Card -->
+            <div class="relative rounded-3xl liquid-glass border-white/15 p-5 md:p-6 overflow-hidden">
+              
+              <!-- Real Academy Classroom Photo -->
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 border border-white/10 shadow-2xl">
+                <img id="heroCardImage" src="assets/academy/IMG_2550.jpg" alt="Fuzion Academy Classroom Mentorship" fetchpriority="high" decoding="async" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                
+                <!-- Live Tag on image -->
+                <div class="absolute top-3 left-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/15 flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#00FF66] animate-pulse"></span>
+                  <span class="text-xs font-bold text-white font-mono">LIVE AT FUZION</span>
+                </div>
+
+                <!-- Bottom badge on image -->
+                <div class="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-slate-950/85 backdrop-blur-md border border-white/10 flex items-center justify-between">
+                  <div>
+                    <h4 class="text-sm font-bold text-white">Chief Mentor: Praveen Singh Rawat</h4>
+                    <p class="text-[11px] text-[#00FF66]">8+ Years Coaching • Sector-11 Pratap Vihar</p>
+                  </div>
+                  <div class="flex items-center text-amber-400 text-xs font-bold gap-1 bg-amber-400/10 px-2 py-1 rounded-md">
+                    <span>★</span>
+                    <span>4.9/5</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive quick feature pills -->
+              <div class="mt-4 grid grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  </div>
+                  <span class="text-slate-200 font-semibold">Small Batches & 1-on-1 Doubts</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-white/5 border border-white/5 flex items-center gap-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+                  </div>
+                  <span class="text-slate-200 font-semibold">Stage Fear Removal Labs</span>
+                </div>
+              </div>
+
+              <!-- Bottom highlight callout -->
+              <div class="mt-4 p-3 rounded-xl bg-gradient-to-r from-emerald-950/60 to-slate-900 border border-emerald-500/20 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-lg">🎯</span>
+                  <span class="text-xs text-slate-300 font-medium">Free Diagnostic & Speaking Assessment</span>
+                </div>
+                <a href="#register" class="text-xs font-bold text-[#00FF66] hover:underline flex items-center gap-1">
+                  Claim Seat →
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. COMPREHENSIVE COURSES SHOWCASE WITH INTERACTIVE SYLLABUS MODALS -->
+  <section id="courses" class="section-fast-render py-20 bg-[#090e17]/80 relative z-10 border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+          Curriculum & Career Roadmaps
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+          Comprehensive Course Programs
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          From mastering high-scoring CBSE/ICSE board sciences and mathematics to executive fluency, stage mastery, and placement excellence. Click on any course to review the full syllabus.
+        </p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex justify-center mb-10">
+        <div class="inline-flex p-1.5 rounded-2xl bg-slate-900/90 border border-white/10 backdrop-blur-xl">
+          <button data-target="academic" class="course-tab-btn active px-6 py-3 rounded-xl text-sm md:text-base font-bold transition-all flex items-center gap-2 border border-emerald-400 text-emerald-400 bg-emerald-500/15 shadow-lg">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+            <span>Academic Coaching (Classes 9th–12th)</span>
+          </button>
+          <button data-target="skills" class="course-tab-btn px-6 py-3 rounded-xl text-sm md:text-base font-bold transition-all flex items-center gap-2 border border-white/10 text-slate-400 bg-white/5">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            <span>Soft Skills & Communication</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- TAB 1: ACADEMIC COACHING GRID -->
+      <div id="academicCoursesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Mathematics Card -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-[#00FF66] border border-emerald-500/30">
+                Classes 9th, 10th, 11th & 12th
+              </span>
+              <span class="text-xs text-slate-400 font-mono">CBSE / ICSE</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Mathematics & Advanced Calculus
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Step-by-step concept clearing, NCERT Exemplar drills, formula derivations, and 10-year previous board question mastery to score 95%+.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Calculus, Coordinate Geometry & Algebra</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Weekly Timed Speed Tests & Chapter Mocks</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="maths-board" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='maths-board'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Physics Card -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                Classes 11th & 12th Science
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Board Special</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Physics (Concepts & Problem Solving)
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Master numericals, electrodynamics, optics, and mechanics without rote memorization. Rigorous derivations and circuit diagrams made intuitive.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>HOTS Numericals & Step-by-Step Derivations</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>Ray Optics, Wave Theory & Modern Physics</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="physics-board" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='physics-board'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Chemistry Card -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-[#00FF66] border border-emerald-500/30">
+                Classes 11th & 12th
+              </span>
+              <span class="text-xs text-slate-400 font-mono">PCM / PCB</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Chemistry (Physical, Organic & Inorganic)
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Complete breakdown of organic reaction mechanisms, physical chemistry equilibrium equations, and inorganic coordination chemistry.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Organic Conversion Flowcharts & Named Reactions</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Solutions, Electrochemistry & Kinetics Mastery</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="chemistry-board" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='chemistry-board'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Applied Mathematics Card -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                Commerce & Humanities
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Code 241</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Applied Mathematics (11th & 12th)
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Targeted curriculum for commerce and humanities learners. Master Financial Mathematics, EMI, Perpetuity, Linear Programming, and Calculus in Economics.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-purple-400">✓</span>
+                <span>Financial Math, Annuities, Mortgages & Sinking Funds</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-purple-400">✓</span>
+                <span>Statistical Modeling & Real-world Data Analysis</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="applied-maths" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='applied-maths'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- English Card -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                Classes 9th to 12th
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Score 98+</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              English Core & Literature Mastery
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Transform English into your highest scoring subject. Expert guidance on unseen comprehensions, creative writing formats, prose analysis, and poetic devices.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-amber-400">✓</span>
+                <span>Board Writing Formats: Letters, Articles & Notices</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-amber-400">✓</span>
+                <span>Literature Character Sketches & Analytical Answers</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="english-board" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='english-board'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 2: SOFT SKILLS & COMMUNICATION GRID -->
+      <div id="skillsCoursesGrid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Spoken English -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-[#00FF66] border border-emerald-500/30">
+                Beginner to Advanced
+              </span>
+              <span class="text-xs text-slate-400 font-mono">100% Practical</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Spoken English & Fluency Mastery
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Break hesitation, think in English without mental translation, expand practical vocabulary, and speak with spontaneous confidence in social and professional settings.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Hesitation Removal & Daily Extempore Sessions</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Pronunciation Correction & Natural Conversation</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="spoken-english" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='spoken-english'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Communication Skills -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                Workplace & Life
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Executive</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Communication Skills & Interpersonal Dynamics
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Master the art of assertive communication, empathetic listening, corporate emails, constructive debate, and influential interpersonal relations.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>The 7 Cs of High-Impact Business Communication</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>Conflict De-escalation & Persuasive Dialogue</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="comm-skills" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='comm-skills'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Presentation Skills -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30">
+                College & Corporate
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Pitch Mastery</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Presentation Skills & Slide Crafting
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Design sleek slide decks, command executive room attention, structure persuasive narratives, and handle high-pressure Q&A sessions with grace.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-amber-400">✓</span>
+                <span>Storytelling Frameworks & Slide Aesthetics</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-amber-400">✓</span>
+                <span>Body Language, Pacing & Vocal Delivery</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="presentation-skills" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='presentation-skills'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Public Speaking -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-[#00FF66] border border-emerald-500/30">
+                Stage & Audience
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Stage Fear Zero</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Public Speaking & Stage Presence
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Step up to the podium without fear. Learn extempore speaking, speech structuring, microphone control, rhetorical hooks, and audience engagement.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Stage Fright Dissolution & Breathing Mechanics</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[#00FF66]">✓</span>
+                <span>Live Podium Speeches with Video Playback Review</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="public-speaking" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='public-speaking'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Interview Preparation -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                Graduates & Placements
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Job Ready</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Interview Preparation & Group Discussions
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Complete placement training: ATS-beating resume design, LinkedIn makeover, STAR behavioral answers, mock interviews, and salary negotiation.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>1-on-1 Mock Interviews with Detailed Scorecards</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-cyan-400">✓</span>
+                <span>Group Discussion (GD) Strategy & Body Language</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="interview-prep" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='interview-prep'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Personality Development -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/15 text-pink-300 border border-pink-500/30">
+                Holistic Growth
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Grooming & Poise</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Personality Development & Etiquette
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Cultivate positive self-esteem, master social grace, formal dressing etiquette, emotional control, and an aura that commands respect in every room.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-pink-400">✓</span>
+                <span>Body Language, Posture & Formal Dining Manners</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-pink-400">✓</span>
+                <span>Self-Discipline & Daily Confidence Habits</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="personality-dev" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='personality-dev'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Voice & Accent Training -->
+        <div class="liquid-glass rounded-2xl p-6 flex flex-col justify-between border-white/10 hover:border-emerald-500/40 group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                Global Standards
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Phonetics</span>
+            </div>
+            <h3 class="text-xl font-bold text-white group-hover:text-[#00FF66] transition-colors">
+              Voice & Accent Training (Neutral Accent)
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Neutralize regional mother tongue influence (MTI). Master international vowel/consonant phonetics, voice modulation, tone control, and natural cadence.
+            </p>
+            <div class="space-y-2 pt-2 border-t border-white/10 text-xs text-slate-400">
+              <div class="flex items-center gap-2">
+                <span class="text-indigo-400">✓</span>
+                <span>MTI Neutralization & Syllable Stress Drills</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-indigo-400">✓</span>
+                <span>Pitch Dynamics & Professional Vocal Warm-ups</span>
+              </div>
+            </div>
+          </div>
+          <div class="pt-6 mt-6 border-t border-white/5 flex items-center justify-between gap-3">
+            <button data-course="voice-accent" class="open-syllabus-btn flex-1 py-2.5 px-4 rounded-xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-500/40 text-xs md:text-sm font-bold text-slate-200 hover:text-[#00FF66] transition-all flex items-center justify-center gap-1.5">
+              <span>View Full Syllabus</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+            <a href="#register" onclick="document.getElementById('regCourse').value='voice-accent'" class="p-2.5 rounded-xl bg-emerald-500/20 text-[#00FF66] hover:bg-[#00FF66] hover:text-black transition-colors" title="Quick Enroll">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SYLLABUS POP-UP MODAL (FROSTED GLASS) -->
+  <div id="syllabusModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 hidden">
+    <!-- Dark blurred backdrop -->
+    <div id="modalBackdropOverlay" class="fixed inset-0 modal-backdrop"></div>
+    
+    <!-- Modal Dialog Window -->
+    <div class="relative w-full max-w-3xl max-h-[90vh] bg-[#0c121d]/95 border border-white/15 rounded-3xl p-6 sm:p-8 modal-content overflow-y-auto shadow-2xl backdrop-blur-2xl">
+      
+      <!-- Close button -->
+      <button id="closeModalBtn" class="absolute top-5 right-5 p-2 rounded-full bg-white/5 hover:bg-white/15 text-slate-400 hover:text-white transition-colors" aria-label="Close Syllabus Modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="space-y-3 pb-6 border-b border-white/10 pr-8">
+        <span id="modalCourseBadge" class="inline-block px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-500/20 text-[#00FF66] border border-emerald-500/30">
+          Course Badge
+        </span>
+        <h3 id="modalCourseTitle" class="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+          Course Title
+        </h3>
+        <p id="modalCourseOverview" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Course overview text...
+        </p>
+      </div>
+
+      <!-- Quick Metadata Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-6 border-b border-white/10 text-xs sm:text-sm">
+        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+          <span class="text-slate-400 block mb-1 font-medium">⏳ Program Duration</span>
+          <span id="modalCourseDuration" class="font-bold text-white">Full Academic Year</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+          <span class="text-slate-400 block mb-1 font-medium">🕒 Available Batch Slots</span>
+          <span id="modalCourseSlots" class="font-bold text-[#00FF66]">Morning & Evening</span>
+        </div>
+        <div class="sm:col-span-2 p-4 rounded-xl bg-white/5 border border-white/5">
+          <span class="text-slate-400 block mb-1 font-medium">🎯 Target Audience & Eligibility</span>
+          <span id="modalCourseTarget" class="font-medium text-slate-200">CBSE & ICSE Board Students</span>
+        </div>
+      </div>
+
+      <!-- Key Syllabus Modules Section -->
+      <div class="py-6 space-y-4">
+        <h4 class="text-lg font-bold text-white font-heading flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#00FF66]"></span>
+          <span>Core Syllabus Modules & Topics Covered</span>
+        </h4>
+        <ul id="modalCourseModules" class="space-y-3">
+          <!-- Populated dynamically via JS -->
+        </ul>
+      </div>
+
+      <!-- Modal Footer with Direct "Enroll in This Course" Button -->
+      <div class="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-xs text-slate-400 text-center sm:text-left">
+          <span>Need custom batch timings or weekend batches?</span><br>
+          <span class="text-slate-300">Call Helpline: <strong class="text-[#00FF66]">9582774387</strong></span>
+        </div>
+        <button id="modalEnrollBtn" class="w-full sm:w-auto neon-glow-btn px-7 py-3.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2">
+          <span>Enroll in This Course</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. BOARD EXAM RESULTS & SKILL TRANSFORMATION HIGHLIGHTS -->
+  <section id="results" class="section-fast-render py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+          Proven Track Record
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+          Board Exam Toppers & Career Milestones
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed">
+          Numbers do not lie. Year after year, our students break score records in CBSE & ICSE Board Examinations and transform their professional career trajectories.
+        </p>
+      </div>
+
+      <!-- Glowing Stat Counters -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <div class="liquid-glass rounded-2xl p-6 text-center border-white/10 hover:border-emerald-500/40">
+          <div class="stat-counter text-4xl sm:text-5xl font-black text-[#00FF66] mb-2" data-target="3000" data-suffix="+">0</div>
+          <p class="text-white font-bold text-sm sm:text-base">Students Mentored</p>
+          <p class="text-slate-400 text-xs mt-1">Across 8+ academic years</p>
+        </div>
+
+        <div class="liquid-glass rounded-2xl p-6 text-center border-white/10 hover:border-emerald-500/40">
+          <div class="stat-counter text-4xl sm:text-5xl font-black text-white mb-2" data-target="8" data-suffix="+ Years">0</div>
+          <p class="text-white font-bold text-sm sm:text-base">Teaching Excellence</p>
+          <p class="text-slate-400 text-xs mt-1">Founded by Praveen Singh Rawat</p>
+        </div>
+
+        <div class="liquid-glass rounded-2xl p-6 text-center border-white/10 hover:border-emerald-500/40">
+          <div class="stat-counter text-4xl sm:text-5xl font-black text-[#00FF66] mb-2" data-target="95" data-suffix="%+">0</div>
+          <p class="text-white font-bold text-sm sm:text-base">Top Board Scores</p>
+          <p class="text-slate-400 text-xs mt-1">Subject distinctions in PCM & English</p>
+        </div>
+
+        <div class="liquid-glass rounded-2xl p-6 text-center border-white/10 hover:border-emerald-500/40">
+          <div class="stat-counter text-4xl sm:text-5xl font-black text-cyan-300 mb-2" data-target="100" data-suffix="%">0</div>
+          <p class="text-white font-bold text-sm sm:text-base">Confidence Boost</p>
+          <p class="text-slate-400 text-xs mt-1">Measured stage & verbal poise</p>
+        </div>
+
+      </div>
+
+      <!-- Board Toppers & Alumni Showcase Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Topper Card 1 -->
+        <div class="liquid-glass rounded-2xl p-6 border-white/10 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-emerald-500/20 to-transparent rounded-bl-3xl"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center font-heading font-black text-xl text-[#00FF66]">
+              98.2%
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white">Aryan Sharma</h4>
+              <p class="text-xs text-slate-400">Class 12th CBSE • Science (PCM)</p>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+            "Praveen Sir made Calculus and Organic Chemistry so structured that what used to take 2 hours took 20 minutes in the exam."
+          </p>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-white/10 text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-[#00FF66] border border-emerald-500/30">Maths: 99/100</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">Physics: 98/100</span>
+            <span class="px-2 py-0.5 rounded bg-white/5 text-slate-300 border border-white/10">Chemistry: 97/100</span>
+          </div>
+        </div>
+
+        <!-- Topper Card 2 -->
+        <div class="liquid-glass rounded-2xl p-6 border-white/10 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-bl-3xl"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center font-heading font-black text-xl text-cyan-300">
+              97.6%
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white">Sneha Tyagi</h4>
+              <p class="text-xs text-slate-400">Class 10th CBSE Board Topper</p>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+            "The regular weekly speed tests and chapter-wise mock assessments at Fuzion completely removed all board exam pressure."
+          </p>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-white/10 text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-[#00FF66] border border-emerald-500/30">Science: 98/100</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 border border-cyan-500/30">Maths: 97/100</span>
+            <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 border border-amber-500/30">English: 99/100</span>
+          </div>
+        </div>
+
+        <!-- Alumni Milestone 3 -->
+        <div class="liquid-glass rounded-2xl p-6 border-white/10 relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-transparent rounded-bl-3xl"></div>
+          <div class="flex items-center gap-4 mb-4">
+            <div class="w-14 h-14 rounded-2xl bg-purple-500/20 border border-purple-500/40 flex items-center justify-center font-heading font-black text-xl text-purple-300">
+              MNC
+            </div>
+            <div>
+              <h4 class="text-lg font-bold text-white">Rohan Verma</h4>
+              <p class="text-xs text-slate-400">Spoken English & Interview Prep Alumni</p>
+            </div>
+          </div>
+          <p class="text-slate-300 text-xs md:text-sm leading-relaxed mb-4">
+            "I used to freeze whenever asked to speak in English. After 8 weeks of extempore and mock interviews at Fuzion, I cracked my campus placement at Deloitte!"
+          </p>
+          <div class="flex flex-wrap gap-2 pt-3 border-t border-white/10 text-xs font-mono">
+            <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 border border-purple-500/30">Deloitte Placed</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-[#00FF66] border border-emerald-500/30">Fluent English</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. INTERACTIVE STUDENT & PARENT TESTIMONIALS SLIDER -->
+  <section id="testimonials" class="section-fast-render py-20 bg-[#090e17]/80 relative z-10 border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Intro & Slider Navigation Controls -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div class="space-y-3 max-w-2xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+            Real Voices & Success Stories
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+            Student & Parent Reviews
+          </h2>
+          <p class="text-slate-400 text-sm md:text-base">
+            Genuine experiences from Ghaziabad families who trusted Fuzion Academy for their board journeys and communication breakthroughs.
+          </p>
+        </div>
+
+        <!-- Slider Arrows -->
+        <div class="flex items-center gap-3">
+          <button class="swiper-button-prev-custom w-12 h-12 rounded-xl liquid-glass border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-slate-300 hover:text-[#00FF66] transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          <button class="swiper-button-next-custom w-12 h-12 rounded-xl liquid-glass border-white/10 hover:border-emerald-500/50 flex items-center justify-center text-slate-300 hover:text-[#00FF66] transition-all">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Swiper Slider Container -->
+      <div class="swiper testimonials-swiper pb-14">
+        <div class="swiper-wrapper">
+          
+          <!-- Slide 1 -->
+          <div class="swiper-slide h-auto">
+            <div class="liquid-glass rounded-3xl p-7 flex flex-col justify-between h-full border-white/10 hover:border-emerald-500/30">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="text-xs font-mono font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">Class 12th PCM</span>
+                </div>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                  "Praveen Sir has an extraordinary ability to simplify difficult concepts in Physics and Math. My son was scoring in the 60s during pre-boards, but ended up scoring 94% in his CBSE final exams!"
+                </p>
+              </div>
+              <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-[#00FF66] font-bold flex items-center justify-center text-sm">
+                  VK
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Vikas Kumar</h4>
+                  <p class="text-xs text-slate-400">Parent • Sector-11, Pratap Vihar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide h-auto">
+            <div class="liquid-glass rounded-3xl p-7 flex flex-col justify-between h-full border-white/10 hover:border-emerald-500/30">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="text-xs font-mono font-semibold text-cyan-400 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">Spoken English & GD</span>
+                </div>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                  "The speaking activities, pair conversations, and extempore drills completely wiped out my hesitation. I never thought I would be able to anchor our college annual fest!"
+                </p>
+              </div>
+              <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-cyan-500/20 text-cyan-400 font-bold flex items-center justify-center text-sm">
+                  AP
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Ananya Pandey</h4>
+                  <p class="text-xs text-slate-400">B.Tech Student • Ghaziabad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide h-auto">
+            <div class="liquid-glass rounded-3xl p-7 flex flex-col justify-between h-full border-white/10 hover:border-emerald-500/30">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="text-xs font-mono font-semibold text-purple-400 bg-purple-500/10 px-2.5 py-0.5 rounded-full border border-purple-500/20">Interview & Accent</span>
+                </div>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                  "The mock interviews and resume crafting support provided at Fuzion Academy were top-tier. Praveen Sir’s feedback on tone modulation helped me secure my job offer."
+                </p>
+              </div>
+              <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-300 font-bold flex items-center justify-center text-sm">
+                  NG
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Nitin Gupta</h4>
+                  <p class="text-xs text-slate-400">Software Engineer • Sector-11</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide h-auto">
+            <div class="liquid-glass rounded-3xl p-7 flex flex-col justify-between h-full border-white/10 hover:border-emerald-500/30">
+              <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                  <div class="flex text-amber-400 text-sm">★★★★★</div>
+                  <span class="text-xs font-mono font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">Class 10th All Subjects</span>
+                </div>
+                <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+                  "Small batch sizes mean the faculty knows every student's weak points. The frequent test reports kept us parents completely informed throughout the academic year."
+                </p>
+              </div>
+              <div class="pt-6 mt-6 border-t border-white/10 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-[#00FF66] font-bold flex items-center justify-center text-sm">
+                  SM
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-white">Sunita Mishra</h4>
+                  <p class="text-xs text-slate-400">Parent • Pratap Vihar</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Pagination bullets -->
+        <div class="swiper-pagination mt-6"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. BATCH TIMINGS & SCHEDULE -->
+  <section id="schedule" class="section-fast-render py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+          Flexible & Well-Structured Slots
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+          Batch Timings & Weekly Schedule
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base">
+          Tailored slots for morning learners, evening school revision, college students, and working professionals.
+        </p>
+      </div>
+
+      <!-- Schedule Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Morning Slot -->
+        <div class="liquid-glass rounded-3xl p-7 border-white/10 hover:border-emerald-500/30 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-amber-500/15 text-amber-300 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-amber-400 font-bold uppercase">Early Focus Batches</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Morning Shifts</h3>
+            </div>
+            <p class="text-xs text-slate-400">Ideal for early risers, fresh mind problem-solving, and spoken English foundation.</p>
+            
+            <div class="space-y-3 pt-3 border-t border-white/10 text-sm">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Physics / Maths (Class 12th)</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">6:30 AM - 8:00 AM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Class 10th Boards Foundation</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">8:00 AM - 9:30 AM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Spoken English (Batch A)</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">9:30 AM - 11:00 AM</span>
+              </div>
+            </div>
+          </div>
+          <a href="#register" class="mt-6 w-full py-2.5 rounded-xl text-center text-xs font-bold bg-white/5 hover:bg-emerald-500/20 text-slate-300 hover:text-[#00FF66] border border-white/10 transition-colors">
+            Reserve Morning Seat
+          </a>
+        </div>
+
+        <!-- Afternoon / Evening Slot -->
+        <div class="liquid-glass rounded-3xl p-7 border-emerald-500/30 relative overflow-hidden flex flex-col justify-between shadow-emerald-950/40 shadow-xl">
+          <div class="absolute top-3 right-3 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#00FF66]/20 text-[#00FF66] border border-[#00FF66]/30">
+            MOST POPULAR
+          </div>
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 text-[#00FF66] flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-[#00FF66] font-bold uppercase">Prime After-School Slots</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Evening Shifts</h3>
+            </div>
+            <p class="text-xs text-slate-400">Convenient right after school hours for rigorous concept revision and doubt clearing.</p>
+            
+            <div class="space-y-3 pt-3 border-t border-white/10 text-sm">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Class 9th & 10th Academic</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">4:00 PM - 5:30 PM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Class 11th & 12th PCM / Applied</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">5:30 PM - 7:00 PM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Public Speaking & Communication</span>
+                <span class="font-mono font-bold text-[#00FF66] text-xs">7:00 PM - 8:30 PM</span>
+              </div>
+            </div>
+          </div>
+          <a href="#register" class="mt-6 w-full py-2.5 rounded-xl text-center text-xs font-bold neon-glow-btn">
+            Reserve Evening Seat
+          </a>
+        </div>
+
+        <!-- Weekend & Late Special Slot -->
+        <div class="liquid-glass rounded-3xl p-7 border-white/10 hover:border-emerald-500/30 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-cyan-500/15 text-cyan-300 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+              <span class="text-xs font-mono text-cyan-300 font-bold uppercase">Professionals & Fast-Track</span>
+              <h3 class="text-2xl font-bold text-white mt-1">Weekend Specials</h3>
+            </div>
+            <p class="text-xs text-slate-400">Intensive crash modules, placement mock interviews, and working professional batches.</p>
+            
+            <div class="space-y-3 pt-3 border-t border-white/10 text-sm">
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Corporate Soft Skills & Accent</span>
+                <span class="font-mono font-bold text-cyan-300 text-xs">Sat: 6:00 PM - 8:30 PM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Applied Maths & Board Crash</span>
+                <span class="font-mono font-bold text-cyan-300 text-xs">Sun: 9:00 AM - 12:30 PM</span>
+              </div>
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/5">
+                <span class="text-slate-300 font-medium">Stage Presentations & GDs</span>
+                <span class="font-mono font-bold text-cyan-300 text-xs">Sun: 2:00 PM - 4:30 PM</span>
+              </div>
+            </div>
+          </div>
+          <a href="#register" class="mt-6 w-full py-2.5 rounded-xl text-center text-xs font-bold bg-white/5 hover:bg-emerald-500/20 text-slate-300 hover:text-[#00FF66] border border-white/10 transition-colors">
+            Reserve Weekend Slot
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. ACADEMY & STUDENT SUCCESS GALLERY (REAL CONVERTED PHOTOS) -->
+  <section id="gallery" class="section-fast-render py-20 bg-[#090e17]/80 relative z-10 border-t border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Intro -->
+      <div class="text-center max-w-3xl mx-auto mb-10 space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+          Life at Fuzion
+        </div>
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+          Academy & Student Success Gallery
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base">
+          Glimpses into our classrooms, speaking activities, student celebrations, and personalized mentorship sessions at Sector-11, Pratap Vihar.
+        </p>
+        <div class="pt-2">
+          <a href="photo-selector.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-white/5 hover:bg-emerald-500/20 border border-emerald-500/30 text-[#00FF66] transition-all">
+            <span>📸 Pick & Replace Gallery Photos in Photo Studio</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2.5 mb-10">
+        <button data-category="all" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 transition-colors">
+          All Moments
+        </button>
+        <button data-category="classroom" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-white/5 text-slate-400 border border-white/10 hover:text-white transition-colors">
+          Classrooms & Lectures
+        </button>
+        <button data-category="speaking" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-white/5 text-slate-400 border border-white/10 hover:text-white transition-colors">
+          Speaking & Debates
+        </button>
+        <button data-category="facilities" class="gallery-filter-btn px-4 py-2 rounded-xl text-xs md:text-sm font-bold bg-white/5 text-slate-400 border border-white/10 hover:text-white transition-colors">
+          Mentorship & Campus
+        </button>
+      </div>
+
+      <!-- Dynamic Gallery Grid Container -->
+      <div id="galleryContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Injected dynamically via main.js from real academy photo assets -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FULLSCREEN LIGHTBOX VIEWER -->
+  <div id="galleryLightbox" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8 hidden">
+    <div id="lightboxBackdrop" class="fixed inset-0 bg-black/90 backdrop-blur-md"></div>
+    <div class="relative max-w-5xl w-full z-10 flex flex-col items-center">
+      
+      <!-- Top controls -->
+      <div class="w-full flex items-center justify-between pb-4 text-white">
+        <span id="lightboxCounter" class="text-xs font-mono font-bold text-[#00FF66] bg-emerald-950/80 px-3 py-1 rounded-full border border-emerald-500/30">1 / 12</span>
+        <button id="closeLightbox" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors" aria-label="Close Lightbox">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+
+      <!-- Image display with side arrows -->
+      <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-slate-950 rounded-2xl overflow-hidden border border-white/10 flex items-center justify-center shadow-2xl">
+        <img id="lightboxImg" src="" alt="Fuzion Gallery Lightbox" class="w-full h-full object-contain">
+        
+        <!-- Prev Arrow -->
+        <button id="prevPhoto" class="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-black/90 text-white border border-white/15 transition-all" aria-label="Previous Photo">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <!-- Next Arrow -->
+        <button id="nextPhoto" class="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/60 hover:bg-black/90 text-white border border-white/15 transition-all" aria-label="Next Photo">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
+      <!-- Caption info below photo -->
+      <div class="w-full text-center mt-4">
+        <h4 id="lightboxTitle" class="text-lg font-bold text-white">Photo Title</h4>
+        <p id="lightboxDesc" class="text-xs sm:text-sm text-slate-300 mt-1">Photo Description</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 8. STUDENT & PARENT SIGN-UP SECTION -->
+  <section id="register" class="section-fast-render py-20 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Side Context & Value Proposition -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+            Start Your Transformation
+          </div>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-white font-heading">
+            Register for a Free Demo & Diagnostic Class
+          </h2>
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+            Experience our interactive teaching methodology firsthand. Whether you want to score 95%+ in Board Exams or break hesitation in Spoken English, our personalized diagnostic session will establish your baseline.
+          </p>
+
+          <div class="space-y-4 pt-4 border-t border-white/10 text-sm">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0 mt-0.5">✓</div>
+              <p class="text-slate-300"><strong>Free Diagnostic Evaluation:</strong> Know your current conceptual strengths and speaking fluency level.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0 mt-0.5">✓</div>
+              <p class="text-slate-300"><strong>Direct Mentorship Consult:</strong> Discuss target scores with Praveen Singh Rawat.</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 rounded-lg bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0 mt-0.5">✓</div>
+              <p class="text-slate-300"><strong>No Obligation:</strong> Attend 2 complete demo sessions before completing formal enrollment.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl liquid-glass border-emerald-500/20 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-[#00FF66]/20 text-[#00FF66] flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-medium">Prefer speaking directly on call?</p>
+              <a href="tel:9582774387" class="text-sm font-bold text-white hover:text-[#00FF66] transition-colors">Call Helpline: +91 9582774387</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Side: Frosted Glass Registration Form -->
+        <div class="lg:col-span-7">
+          <div class="liquid-glass-glow rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            
+            <div class="mb-6">
+              <h3 class="text-2xl font-bold text-white font-heading">Seat Reservation Form</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1">Fill out the brief details below and our counseling coordinator will confirm your demo slot within 2 hours.</p>
+            </div>
+
+            <form id="studentRegistrationForm" class="space-y-5">
+              
+              <!-- Applicant Role Toggle (Student / Parent) -->
+              <div class="space-y-1.5">
+                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">I am a:</label>
+                <div class="grid grid-cols-2 gap-3">
+                  <label class="cursor-pointer">
+                    <input type="radio" name="userRole" value="Student" checked class="peer sr-only">
+                    <div class="py-2.5 px-4 rounded-xl text-center text-xs sm:text-sm font-bold bg-white/5 border border-white/10 peer-checked:border-[#00FF66] peer-checked:bg-emerald-500/15 peer-checked:text-[#00FF66] transition-all">
+                      Student
+                    </div>
+                  </label>
+                  <label class="cursor-pointer">
+                    <input type="radio" name="userRole" value="Parent" class="peer sr-only">
+                    <div class="py-2.5 px-4 rounded-xl text-center text-xs sm:text-sm font-bold bg-white/5 border border-white/10 peer-checked:border-[#00FF66] peer-checked:bg-emerald-500/15 peer-checked:text-[#00FF66] transition-all">
+                      Parent / Guardian
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Full Name & Phone Number -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label for="fullName" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Full Name <span class="text-[#00FF66]">*</span></label>
+                  <input type="text" id="fullName" name="fullName" required maxlength="100" autocomplete="name" placeholder="e.g. Aryan Sharma" class="w-full form-glass-input rounded-xl px-4 py-3 text-sm placeholder:text-slate-500">
+                </div>
+
+                <div class="space-y-1.5">
+                  <label for="phoneNumber" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">WhatsApp / Mobile No. <span class="text-[#00FF66]">*</span></label>
+                  <div class="relative">
+                    <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-mono">+91</span>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required pattern="[0-9]{10}" maxlength="10" autocomplete="tel" placeholder="9876543210" class="w-full form-glass-input rounded-xl pl-12 pr-4 py-3 text-sm font-mono placeholder:text-slate-500">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Course of Interest Dropdown (Auto-populated from syllabus modals) -->
+              <div class="space-y-1.5">
+                <label for="regCourse" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Course of Interest <span class="text-[#00FF66]">*</span></label>
+                <div class="relative">
+                  <select id="regCourse" name="courseSelect" required class="w-full form-glass-input rounded-xl px-4 py-3 text-sm appearance-none cursor-pointer">
+                    <option value="" disabled selected>-- Select Your Target Program --</option>
+                    
+                    <optgroup label="📚 Academic Coaching (Classes 9th–12th)">
+                      <option value="maths-board">Mathematics & Calculus (Classes 9th to 12th)</option>
+                      <option value="physics-board">Physics (Classes 11th & 12th Board Special)</option>
+                      <option value="chemistry-board">Chemistry: Physical, Organic & Inorganic</option>
+                      <option value="applied-maths">Applied Mathematics (Commerce & Humanities)</option>
+                      <option value="english-board">English Core & Literature (Board Mastery)</option>
+                    </optgroup>
+
+                    <optgroup label="🎤 Soft Skills & Communication">
+                      <option value="spoken-english">Spoken English & Fluency Mastery</option>
+                      <option value="comm-skills">Professional Communication & Interpersonal Dynamics</option>
+                      <option value="presentation-skills">Executive Presentation Skills & Slide Mastery</option>
+                      <option value="public-speaking">Public Speaking & Stage Presence</option>
+                      <option value="interview-prep">Interview Preparation & GD Placement Readiness</option>
+                      <option value="personality-dev">Personality Development & Grooming</option>
+                      <option value="voice-accent">Voice & Accent Training (Neutral Accent)</option>
+                    </optgroup>
+                  </select>
+                  <div class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Preferred Batch Timing -->
+              <div class="space-y-1.5">
+                <label for="preferredBatch" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Preferred Batch Timing</label>
+                <div class="relative">
+                  <select id="preferredBatch" name="preferredBatch" class="w-full form-glass-input rounded-xl px-4 py-3 text-sm appearance-none cursor-pointer">
+                    <option value="morning">Morning Shift (7:00 AM - 10:30 AM)</option>
+                    <option value="evening" selected>Evening Shift (4:00 PM - 8:30 PM)</option>
+                    <option value="weekend">Weekend Special (Saturday & Sunday Batches)</option>
+                    <option value="flexible">Any Slot / Flexible Timing</option>
+                  </select>
+                  <div class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message / Special Query (Optional) -->
+              <div class="space-y-1.5">
+                <label for="messageNotes" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Specific Goal or Query (Optional)</label>
+                <textarea id="messageNotes" name="messageNotes" rows="2" maxlength="500" placeholder="e.g., Target 98+ in CBSE Maths, or need stage fear removal..." class="w-full form-glass-input rounded-xl px-4 py-3 text-sm placeholder:text-slate-500"></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="w-full neon-glow-btn py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2">
+                <span>Confirm & Reserve Free Demo Class</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+
+              <p class="text-[11px] text-center text-slate-400">
+                🔒 We respect your privacy. No spam. You will receive an immediate WhatsApp confirmation.
+              </p>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INSTANT SUBMISSION CONFIRMATION MODAL -->
+  <div id="submissionSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+    <div class="fixed inset-0 bg-black/80 backdrop-blur-md"></div>
+    <div class="relative w-full max-w-md bg-[#0c121d] border border-emerald-500/40 rounded-3xl p-6 sm:p-8 text-center space-y-5 shadow-2xl backdrop-blur-2xl">
+      
+      <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-[#00FF66] border border-emerald-500/40 flex items-center justify-center mx-auto text-3xl">
+        ✓
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-black text-white font-heading">Demo Slot Reserved!</h3>
+        <p class="text-xs text-slate-400 mt-1">Thank you for connecting with Fuzion Academy.</p>
+      </div>
+
+      <div id="successSummaryText" class="p-4 rounded-xl bg-white/5 border border-white/10 text-left text-xs sm:text-sm text-slate-300 leading-relaxed font-mono">
+        <!-- Injected via main.js -->
+      </div>
+
+      <div class="space-y-3 pt-2">
+        <a id="whatsappConfirmBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-[#25D366] text-black font-bold text-sm flex items-center justify-center gap-2 hover:brightness-110 transition-all shadow-lg shadow-emerald-950/50">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.54 1.776.84 2.792.84 3.183 0 5.77-2.587 5.77-5.766.001-3.183-2.585-5.826-5.77-5.826zm9.969 5.766c0 5.514-4.486 10-10 10-1.823 0-3.528-.492-4.996-1.344l-5.004 1.344 1.371-4.887c-.903-1.493-1.371-3.21-1.371-5.113 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/></svg>
+          <span>Send Details on WhatsApp</span>
+        </a>
+
+        <button id="closeSuccessModal" class="w-full py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-slate-300 font-semibold text-xs border border-white/10 transition-colors">
+          Close Window
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 10. FOOTER & INTERACTIVE CAMPUS LOCATION CARD -->
+  <footer id="location" class="section-fast-render relative z-10 bg-[#06080d] border-t border-white/10 pt-16 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Campus Card with Embedded Google Maps -->
+      <div class="mb-16 liquid-glass rounded-3xl p-6 sm:p-8 border-white/10 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <!-- Campus Address & Timing Details -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-xs font-mono font-bold text-[#00FF66] uppercase">
+              Physical Campus & Center
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white font-heading">
+              Visit Fuzion Academy
+            </h3>
+
+            <div class="space-y-4 text-sm text-slate-300">
+              <div class="flex items-start gap-3">
+                <span class="text-[#00FF66] mt-1">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </span>
+                <div>
+                  <strong class="text-white block">Campus Address:</strong>
+                  <span>Sector-11, Pratap Vihar, Ghaziabad, Uttar Pradesh 201009</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-[#00FF66] mt-1">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </span>
+                <div>
+                  <strong class="text-white block">Operating Hours:</strong>
+                  <span>Monday – Saturday: 8:00 AM – 8:30 PM<br>Sunday: 9:00 AM – 2:00 PM (Special Batches)</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <span class="text-[#00FF66] mt-1">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </span>
+                <div>
+                  <strong class="text-white block">Direct Helpline / WhatsApp:</strong>
+                  <a href="tel:9582774387" class="text-[#00FF66] font-mono font-bold hover:underline">+91 9582774387</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Get Directions Button -->
+            <div class="pt-2">
+              <a href="https://maps.google.com/?q=Sector+11+Pratap+Vihar+Ghaziabad+Uttar+Pradesh+201009" target="_blank" rel="noopener noreferrer" class="neon-outline-btn px-6 py-3 rounded-xl text-sm font-bold inline-flex items-center gap-2">
+                <span>Open in Google Maps / Get Directions</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- Dark-mode Styled Interactive Embedded Map Container -->
+          <div class="lg:col-span-7">
+            <div class="dark-map-container aspect-[16/10] sm:aspect-[16/9] w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+              <iframe 
+                data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14004.819717758376!2d77.4208479!3d28.6535564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf05c6d36e897%3A0xe54958f273bc928f!2sSector%2011%2C%20Pratap%20Vihar%2C%20Ghaziabad%2C%20Uttar%20Pradesh%20201009!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Fuzion Academy Google Maps Location"
+                class="lazy-map-frame w-full h-full">
+              </iframe>
+              <div class="absolute bottom-3 left-3 bg-slate-950/85 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 text-[11px] text-slate-300 font-mono">
+                📍 Sector-11, Pratap Vihar, Ghaziabad
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer Multi-Column Links -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10 text-sm">
+        
+        <!-- Column 1: Brand & Bio -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500/20 to-slate-900 border border-[#00FF66]/30 flex items-center justify-center p-1">
+              <img src="assets/logo/fuzion-icon.svg" alt="Fuzion Icon" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <span class="text-xl font-black text-white font-heading">FUZION ACADEMY</span>
+              <p class="text-[10px] uppercase tracking-wider text-slate-400">Fusion of Online & Offline Learning</p>
+            </div>
+          </div>
+          <p class="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
+            Ghaziabad's premier institute for CBSE & ICSE Academic Coaching and Soft Skills & English Communication Excellence under Chief Mentor Praveen Singh Rawat.
+          </p>
+          <div class="flex items-center gap-3 text-slate-400">
+            <span class="text-xs">Connect:</span>
+            <a href="https://wa.me/919582774387" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-white/5 hover:text-[#00FF66] transition-colors" title="WhatsApp">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.54 1.776.84 2.792.84 3.183 0 5.77-2.587 5.77-5.766.001-3.183-2.585-5.826-5.77-5.826zm9.969 5.766c0 5.514-4.486 10-10 10-1.823 0-3.528-.492-4.996-1.344l-5.004 1.344 1.371-4.887c-.903-1.493-1.371-3.21-1.371-5.113 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/></svg>
+            </a>
+            <a href="tel:9582774387" class="p-2 rounded-lg bg-white/5 hover:text-[#00FF66] transition-colors" title="Direct Helpline">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Academic Programs -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider font-heading">Academic Coaching</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Class 12th Mathematics</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Class 11th & 12th Physics</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Chemistry (Physical/Organic)</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Applied Mathematics (Commerce)</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Class 9th & 10th Board Foundation</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Communication & Skills -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider font-heading">Soft Skills & Fluency</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Spoken English Fluency</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Public Speaking & Stage Presence</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Executive Presentation Skills</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Interview Preparation & GDs</a></li>
+            <li><a href="#courses" class="hover:text-[#00FF66] transition-colors">Voice & Neutral Accent Training</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Quick Links & Contact -->
+        <div class="space-y-3">
+          <h4 class="text-white font-bold text-sm uppercase tracking-wider font-heading">Quick Links</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#schedule" class="hover:text-[#00FF66] transition-colors">Batch Timings</a></li>
+            <li><a href="#results" class="hover:text-[#00FF66] transition-colors">Board Exam Toppers</a></li>
+            <li><a href="#testimonials" class="hover:text-[#00FF66] transition-colors">Student & Parent Reviews</a></li>
+            <li><a href="#gallery" class="hover:text-[#00FF66] transition-colors">Campus Photo Gallery</a></li>
+            <li><a href="#register" class="hover:text-[#00FF66] transition-colors">Book Free Demo Class</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Copyright & Center Info -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p>© 2026 Fuzion Academy. All rights reserved. Sector-11, Pratap Vihar, Ghaziabad.</p>
+        <p class="text-slate-400">Mentorship by <span class="text-white font-semibold">Praveen Singh Rawat</span> • Helpline: <a href="tel:9582774387" class="text-[#00FF66] font-mono">9582774387</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 1-MINUTE DISCOUNT POPUP MODAL (AUTO APPEARS AFTER 1 MINUTE) -->
+  <div id="discountModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 hidden">
+    <!-- Backdrop blur -->
+    <div id="discountModalBackdrop" class="fixed inset-0 modal-backdrop"></div>
+    
+    <!-- Modal Dialog Window -->
+    <div class="relative w-full max-w-lg bg-[#0c121d]/95 border-2 border-[#00FF66]/50 rounded-3xl p-6 sm:p-8 modal-content shadow-[0_0_50px_rgba(0,255,102,0.35)] backdrop-blur-2xl overflow-hidden">
+      
+      <!-- Top festive decorative ribbon -->
+      <div class="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-[#00FF66]/30 via-emerald-500/20 to-cyan-500/30 rounded-full blur-xl pointer-events-none"></div>
+
+      <!-- Close button -->
+      <button id="closeDiscountBtn" class="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors" aria-label="Close Discount Banner">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+
+      <!-- Badge & Urgency Timer -->
+      <div class="flex items-center justify-between gap-3 mb-4 pr-8">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-gradient-to-r from-orange-500 to-rose-500 text-white shadow-md">
+          🔥 SPECIAL ADMISSION OFFER
+        </span>
+        <div class="flex items-center gap-1.5 text-xs font-mono font-bold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/30">
+          <span>⏳ Expires in:</span>
+          <span id="discountTimer">14:59</span>
+        </div>
+      </div>
+
+      <!-- Main Discount Headline -->
+      <div class="space-y-2 mb-6">
+        <h3 class="text-2xl sm:text-3xl font-black text-white font-heading leading-tight">
+          Unlock Flat <span class="text-[#00FF66]">20% OFF</span> on All Courses!
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Exclusive early-bird scholarship offer for new enrollments in CBSE/ICSE Board Prep (9th–12th) & Professional Spoken English.
+        </p>
+      </div>
+
+      <!-- Discount Code Box with Copy Button -->
+      <div class="discount-code-box rounded-2xl p-4 flex items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-[11px] font-mono text-slate-400 block uppercase">Your Exclusive Promo Code</span>
+          <span class="text-2xl font-black font-mono tracking-widest text-[#00FF66]">FUZION20</span>
+        </div>
+        <button id="copyDiscountCodeBtn" class="px-3.5 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-bold text-white flex items-center gap-1.5 transition-colors border border-white/10">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span>Copy Code</span>
+        </button>
+      </div>
+
+      <!-- Perks Included -->
+      <div class="space-y-2.5 text-xs text-slate-300 mb-6">
+        <div class="flex items-center gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0">✓</span>
+          <span>Flat 20% Discount on Monthly or Annual Tuition Fee</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0">✓</span>
+          <span>Free Diagnostic Board Assessment & Concept Roadmapping</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-[#00FF66] flex items-center justify-center shrink-0">✓</span>
+          <span>Direct 1-on-1 Mentorship Counseling with Praveen Sir</span>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="space-y-3">
+        <button id="claimDiscountBtn" class="w-full neon-glow-btn py-3.5 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg">
+          <span>Claim 20% Discount & Book Demo</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+        </button>
+
+        <a href="https://wa.me/919582774387?text=Hi%20Fuzion%20Academy!%20I%20would%20like%20to%20claim%20the%2020%25%20Early-Bird%20Discount%20(Code:%20FUZION20)%20for%20admissions." target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl bg-[#25D366]/20 hover:bg-[#25D366]/30 text-[#25D366] border border-[#25D366]/40 text-xs font-bold flex items-center justify-center gap-2 transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.54 1.776.84 2.792.84 3.183 0 5.77-2.587 5.77-5.766.001-3.183-2.585-5.826-5.77-5.826zm9.969 5.766c0 5.514-4.486 10-10 10-1.823 0-3.528-.492-4.996-1.344l-5.004 1.344 1.371-4.887c-.903-1.493-1.371-3.21-1.371-5.113 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/></svg>
+          <span>Claim via WhatsApp (+91 9582774387)</span>
+        </a>
+
+        <div class="text-center pt-1">
+          <button id="discountMaybeLater" class="text-xs text-slate-400 hover:text-slate-200 underline">
+            No thanks, I'll pay full price later
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FLOATING QUICK-TRIGGER PILL FOR DISCOUNT (FOR INSTANT TEST & VISITORS) -->
+  <button id="floatingDiscountPill" class="discount-floating-pill group flex items-center gap-2 px-3.5 py-2 rounded-full bg-gradient-to-r from-orange-500/90 to-rose-500/90 text-white text-xs font-bold shadow-lg shadow-orange-950/40 border border-white/20 backdrop-blur-md" title="Click to view 20% Discount Offer">
+    <span class="animate-bounce text-sm">🎁</span>
+    <span>Claim 20% Off</span>
+    <span class="w-2 h-2 rounded-full bg-[#00FF66] animate-ping"></span>
+  </button>
+
+  <!-- 9. FLOATING WHATSAPP QUICK-INQUIRY BUTTON -->
+  <a 
+    href="https://wa.me/919582774387?text=Hi%20Fuzion%20Academy!%20I%20would%20like%20to%20inquire%20about%20courses%20and%20batch%20timings." 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="whatsapp-float group" 
+    aria-label="Chat with Fuzion Academy on WhatsApp">
+    
+    <!-- Tooltip on hover -->
+    <span class="whatsapp-tooltip">Chat with Fuzion Academy</span>
+    
+    <!-- WhatsApp Icon SVG -->
+    <svg class="w-8 h-8 text-white fill-current" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.668-.699c.969.54 1.776.84 2.792.84 3.183 0 5.77-2.587 5.77-5.766.001-3.183-2.585-5.826-5.77-5.826zm9.969 5.766c0 5.514-4.486 10-10 10-1.823 0-3.528-.492-4.996-1.344l-5.004 1.344 1.371-4.887c-.903-1.493-1.371-3.21-1.371-5.113 0-5.514 4.486-10 10-10 5.514 0 10 4.486 10 10z"/>
+    </svg>
+  </a>
+
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Main Application Logic Script -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

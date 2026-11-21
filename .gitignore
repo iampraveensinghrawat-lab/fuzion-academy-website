@@ -1,0 +1,13 @@
+# Raw camera files (keep local, not on git)
+FUZION/
+*.CR2
+*.cr2
+
+# Temporary & Log files
+*.tmp
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
