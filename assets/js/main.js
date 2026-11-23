@@ -550,7 +550,7 @@ function initSyllabusModal() {
         const li = document.createElement('li');
         li.className = 'flex items-start gap-3 text-slate-300 text-sm md:text-base leading-relaxed';
         li.innerHTML = `
-          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500/20 text-[#00FF66] shrink-0 mt-1">
+          <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-400 shrink-0 mt-1">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
           </span>
           <span>${mod}</span>
@@ -605,9 +605,9 @@ function initSyllabusModal() {
       if (courseSelect && courseKey) {
         courseSelect.value = courseKey;
         // Visual highlight effect
-        courseSelect.classList.add('ring-2', 'ring-[#00FF66]', 'bg-emerald-950/40');
+        courseSelect.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-950/40');
         setTimeout(() => {
-          courseSelect.classList.remove('ring-2', 'ring-[#00FF66]', 'bg-emerald-950/40');
+          courseSelect.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-950/40');
         }, 3000);
       }
     });
@@ -667,16 +667,16 @@ function initGallery() {
 
     filtered.forEach((item, index) => {
       const card = document.createElement('div');
-      card.className = 'gallery-item liquid-glass rounded-2xl overflow-hidden cursor-pointer group relative';
+      card.className = 'gallery-item academic-card overflow-hidden cursor-pointer group relative';
       card.innerHTML = `
         <div class="gallery-img-wrap aspect-[4/3] w-full overflow-hidden bg-slate-900">
-          <img src="${escapeHTML(item.thumb)}" onerror="this.onerror=null;this.src='${escapeHTML(item.src)}'" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <img src="${escapeHTML(item.thumb)}" onerror="this.onerror=null;this.src='${escapeHTML(item.src)}'" alt="${escapeHTML(item.title)}" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:opacity-95 transition-opacity duration-300">
         </div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-          <span class="text-xs font-mono font-semibold tracking-wider text-[#00FF66] uppercase mb-1">${escapeHTML(item.category)}</span>
-          <h4 class="text-white font-bold text-base md:text-lg mb-1">${escapeHTML(item.title)}</h4>
-          <p class="text-slate-300 text-xs line-clamp-2">${escapeHTML(item.desc)}</p>
-          <div class="mt-3 inline-flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
+        <div class="p-4 bg-[#151b26] border-t border-white/5 flex flex-col justify-between">
+          <span class="text-[10px] font-mono font-medium tracking-wider text-emerald-400 uppercase mb-1">${escapeHTML(item.category)}</span>
+          <h4 class="text-white font-medium text-sm mb-1">${escapeHTML(item.title)}</h4>
+          <p class="text-slate-400 text-xs line-clamp-2">${escapeHTML(item.desc)}</p>
+          <div class="mt-2.5 inline-flex items-center gap-1.5 text-xs text-emerald-400 font-medium">
             <span>View Fullscreen</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </div>
@@ -1055,8 +1055,8 @@ function initDiscountModal() {
     copyBtn.addEventListener('click', () => {
       navigator.clipboard.writeText('FUZION20').then(() => {
         copyBtn.innerHTML = `
-          <svg class="w-4 h-4 text-[#00FF66]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          <span class="text-[#00FF66] font-bold">COPIED!</span>
+          <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          <span class="text-emerald-400 font-bold">COPIED</span>
         `;
         setTimeout(() => {
           copyBtn.innerHTML = `
@@ -1082,9 +1082,9 @@ function initDiscountModal() {
       const notesField = document.getElementById('messageNotes');
       if (notesField) {
         notesField.value = 'Applied Early-Bird Voucher: FUZION20 (20% Off Admissions)';
-        notesField.classList.add('ring-2', 'ring-[#00FF66]', 'bg-emerald-950/40');
+        notesField.classList.add('ring-2', 'ring-emerald-500', 'bg-emerald-950/40');
         setTimeout(() => {
-          notesField.classList.remove('ring-2', 'ring-[#00FF66]', 'bg-emerald-950/40');
+          notesField.classList.remove('ring-2', 'ring-emerald-500', 'bg-emerald-950/40');
         }, 3500);
       }
     });
